@@ -1,0 +1,1261 @@
+<sdf version='1.11'>
+  <model name='hexapod'>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <robot_namespace>/hexapod</robot_namespace>
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <control_rate>1000</control_rate>
+      <parameters>$(find-pkg-share hexapod_description)/config/hexapod_ros2_control.yaml</parameters>
+    </plugin>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.017697965229098889 2.787295454187916e-05 0.024492211034114669 0 0 0</pose>
+        <mass>0.4551135553229671</mass>
+        <inertia>
+          <ixx>0.0003071482190605512</ixx>
+          <ixy>-4.2642916593415088e-06</ixy>
+          <ixz>-0.00012561357613457091</ixz>
+          <iyy>0.00092742227509367019</iyy>
+          <iyz>-1.791515602468503e-06</iyz>
+          <izz>0.001079864570977483</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__T260_link_collision_1'>
+        <pose>0.12194437158779101 -0.0078500000000002804 0.089361887308834306 -1.5707963267948899 0 -1.5707963267949003</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/T260_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__realsense_link_collision_2'>
+        <pose>0.12204 -0.0001 0.059249999999999997 1.5708 -5.5511151231257827e-17 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/realsense_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.127450004 0.127450004 0.127450004 1</diffuse>
+          <ambient>0.127450004 0.127450004 0.127450004 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__T260_link_visual_1'>
+        <pose>0.12194437158779101 -0.0078500000000002804 0.089361887308834306 -1.5707963267948899 0 -1.5707963267949003</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/T260_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__realsense_link_visual_2'>
+        <pose>0.12204 -0.0001 0.059249999999999997 1.5708 -5.5511151231257827e-17 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/realsense_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.877451003 0.877451003 0.877451003 1</diffuse>
+          <ambient>0.877451003 0.877451003 0.877451003 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='hip_1_joint' type='revolute'>
+      <pose relative_to='base_link'>0.11551 -0.065505999999999995 0.015939999999999999 0 0 0.74171000000000009</pose>
+      <parent>base_link</parent>
+      <child>hip_1_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1.0</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_1_link'>
+      <pose relative_to='hip_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00054356000000000001 -0.026006999999999999 0.00054392000000000004 0 0 0</pose>
+        <mass>0.028857000000000001</mass>
+        <inertia>
+          <ixx>1.2299e-05</ixx>
+          <ixy>-1.0053e-11</ixy>
+          <ixz>9.2994000000000005e-12</ixz>
+          <iyy>1.173e-05</iyy>
+          <iyz>-6.2780999999999998e-11</iyz>
+          <izz>1.1990999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_1_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.0 0.0 1</diffuse>
+          <ambient>0.4 0.0 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='knee_1_joint' type='revolute'>
+      <pose relative_to='hip_1_link'>0 -0.051999999999999998 0 1.5707999999999998 0.64175000000000015 1.5707999999999998</pose>
+      <parent>hip_1_link</parent>
+      <child>knee_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.3</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='knee_1_link'>
+      <pose relative_to='knee_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.023873999999999999 -0.0011230999999999999 0.00065669000000000003 0 0 0</pose>
+        <mass>0.058628</mass>
+        <inertia>
+          <ixx>1.2548000000000001e-05</ixx>
+          <ixy>-7.3555999999999995e-07</ixy>
+          <ixz>1.9100999999999999e-07</ixz>
+          <iyy>1.7793000000000001e-05</iyy>
+          <iyz>-1.4997999999999999e-09</iyz>
+          <izz>1.3302000000000001e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='knee_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='knee_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_1_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.4 0.0 1</diffuse>
+          <ambient>0.0 0.4 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='ankle_1_joint' type='revolute'>
+      <pose relative_to='knee_1_link'>-0.065000000000000002 -0.014999999999999999 6.0000000000000002e-05 0 0 1.1778</pose>
+      <parent>knee_1_link</parent>
+      <child>ankle_1_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.15</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='ankle_1_link'>
+      <pose relative_to='ankle_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.029806693712144641 -0.01445233432550411 0.00035459316964022081 0 0 0</pose>
+        <mass>0.062997560000000008</mass>
+        <inertia>
+          <ixx>3.6877101259094933e-05</ixx>
+          <ixy>-1.301558882581828e-05</ixy>
+          <ixz>1.9237836760457581e-07</ixz>
+          <iyy>2.588574344661433e-05</iyy>
+          <iyz>5.905166377688463e-09</iyz>
+          <izz>4.5521744065498837e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ankle_1_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='ankle_1_link_fixed_joint_lump__tip_1_link_collision_1'>
+        <pose>-0.08498 -0.086417999999999995 6.0000000000000002e-05 1.0122968849308529+3.14 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ankle_1_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_1_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+      <visual name='ankle_1_link_fixed_joint_lump__tip_1_link_visual_1'>
+        <pose>-0.08498 -0.086417999999999995 6.0000000000000002e-05 1.0122968849308529+3.14 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_1_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.367650002 0.367650002 0.367650002 1</diffuse>
+          <ambient>0.367650002 0.367650002 0.367650002 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='hip_2_joint' type='revolute'>
+      <pose relative_to='base_link'>0 -0.069779999999999995 0.015939999999999999 0 0 -0.043686000000000003</pose>
+      <parent>base_link</parent>
+      <child>hip_2_link</child>
+      <axis>
+        <xyz>-0.015899 0.015899 0.99975000000000003</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1.0</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_2_link'>
+      <pose relative_to='hip_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00054357875334659601 -0.026007289260197498 0.00054392847495048102 0 0 0</pose>
+        <mass>0.0288571734423381</mass>
+        <inertia>
+          <ixx>1.22991274730186e-05</ixx>
+          <ixy>-9.6456595495571099e-12</ixy>
+          <ixz>7.0460048648745597e-12</ixz>
+          <iyy>1.1729811384791101e-05</iyy>
+          <iyz>-6.4606815070241606e-11</iyz>
+          <izz>1.19910033117488e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_2_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.0 0.0 1</diffuse>
+          <ambient>0.4 0.0 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='knee_2_joint' type='revolute'>
+      <pose relative_to='hip_2_link'>0 -0.051999999999999998 0 1.5707999999999998 0.64175000000000015 1.5707999999999998</pose>
+      <parent>hip_2_link</parent>
+      <child>knee_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.3</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='knee_2_link'>
+      <pose relative_to='knee_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.023873999999999999 -0.0011230999999999999 0.00065669000000000003 0 0 0</pose>
+        <mass>0.058628</mass>
+        <inertia>
+          <ixx>1.2548000000000001e-05</ixx>
+          <ixy>-7.3555999999999995e-07</ixy>
+          <ixz>1.9100999999999999e-07</ixz>
+          <iyy>1.7793000000000001e-05</iyy>
+          <iyz>-1.4999e-09</iyz>
+          <izz>1.3302000000000001e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='knee_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='knee_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_2_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.4 0.0 1</diffuse>
+          <ambient>0.0 0.4 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='ankle_2_joint' type='revolute'>
+      <pose relative_to='knee_2_link'>-0.065000000000000002 -0.014999999999999999 6.0000000000000002e-05 0 0 1.1778</pose>
+      <parent>knee_2_link</parent>
+      <child>ankle_2_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.15</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='ankle_2_link'>
+      <pose relative_to='ankle_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.029806693908998969 -0.01445233354641807 0.0003546130961262614 0 0 0</pose>
+        <mass>0.062997560000000008</mass>
+        <inertia>
+          <ixx>3.6877093939561018e-05</ixx>
+          <ixy>-1.301558695989315e-05</ixy>
+          <ixz>1.923481007182637e-07</ixz>
+          <iyy>2.5885744855485712e-05</iyy>
+          <iyz>5.9068352047617826e-09</iyz>
+          <izz>4.5521738149378833e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ankle_2_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='ankle_2_link_fixed_joint_lump__tip_2_link_collision_1'>
+        <pose>-0.084980037778106005 -0.086417797902876695 -5.99999999996714e-05 1.012290966156717 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ankle_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_2_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+      <visual name='ankle_2_link_fixed_joint_lump__tip_2_link_visual_1'>
+        <pose>-0.084980037778106005 -0.086417797902876695 -5.99999999996714e-05 1.012290966156717 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_2_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.367650002 0.367650002 0.367650002 1</diffuse>
+          <ambient>0.367650002 0.367650002 0.367650002 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='hip_3_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.11551 -0.065505999999999995 0.015939999999999999 0 0 -0.82908000000000015</pose>
+      <parent>base_link</parent>
+      <child>hip_3_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1.0</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_3_link'>
+      <pose relative_to='hip_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00054356470045269201 -0.0260072827278898 0.00054391745622373001 0 0 0</pose>
+        <mass>0.028857126372038001</mass>
+        <inertia>
+          <ixx>1.22991121869075e-05</ixx>
+          <ixy>-1.0053340375470101e-11</ixy>
+          <ixz>9.29935738499628e-12</ixz>
+          <iyy>1.1729796157896701e-05</iyy>
+          <iyz>-6.2781080699921401e-11</iyz>
+          <izz>1.19910068357189e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_3_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.0 0.0 1</diffuse>
+          <ambient>0.4 0.0 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='knee_3_joint' type='revolute'>
+      <pose relative_to='hip_3_link'>0 -0.051999999999999998 0 1.5707999999999998 0.64175000000000015 1.5707999999999998</pose>
+      <parent>hip_3_link</parent>
+      <child>knee_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.3</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='knee_3_link'>
+      <pose relative_to='knee_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.023873773645294302 -0.0011231475812933901 0.00065668702811838597 0 0 0</pose>
+        <mass>0.058628182775322502</mass>
+        <inertia>
+          <ixx>1.2548402404044999e-05</ixx>
+          <ixy>-7.3556414265558195e-07</ixy>
+          <ixz>1.91008516552046e-07</ixz>
+          <iyy>1.77932256315695e-05</iyy>
+          <iyz>-1.49980581142997e-09</iyz>
+          <izz>1.33019893805995e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='knee_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='knee_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_3_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.4 0.0 1</diffuse>
+          <ambient>0.0 0.4 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='ankle_3_joint' type='revolute'>
+      <pose relative_to='knee_3_link'>-0.065000000000000002 -0.014999999999999999 6.0000000000000002e-05 0 0 1.1778</pose>
+      <parent>knee_3_link</parent>
+      <child>ankle_3_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.15</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='ankle_3_link'>
+      <pose relative_to='ankle_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.029794389860885249 -0.01443239586283528 0.00035459077132328612 0 0 0</pose>
+        <mass>0.062997187229657289</mass>
+        <inertia>
+          <ixx>3.6699107146855992e-05</ixx>
+          <ixy>-1.289177570793602e-05</ixy>
+          <ixz>1.926034246659959e-07</ixz>
+          <iyy>2.580066580036652e-05</iyy>
+          <iyz>6.2695704077562522e-09</iyz>
+          <izz>4.5258471678184499e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ankle_3_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='ankle_3_link_fixed_joint_lump__tip_3_link_collision_1'>
+        <pose>-0.084980037778106005 -0.086417797902876597 -5.9999999999782402e-05 1.012290966156717 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ankle_3_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_3_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+      <visual name='ankle_3_link_fixed_joint_lump__tip_3_link_visual_1'>
+        <pose>-0.084980037778106005 -0.086417797902876597 -5.9999999999782402e-05 1.012290966156717 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_3_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.367647082 0.367647082 0.367647082 1</diffuse>
+          <ambient>0.367647082 0.367647082 0.367647082 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='hip_4_joint' type='revolute'>
+      <pose relative_to='base_link'>0.11551 0.065505999999999995 0.015939999999999999 0 0 -0.82908000000000015</pose>
+      <parent>base_link</parent>
+      <child>hip_4_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1.0</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_4_link'>
+      <pose relative_to='hip_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00054356470045266404 0.026007282727889901 0.00054391745622375798 0 0 0</pose>
+        <mass>0.028857126372038001</mass>
+        <inertia>
+          <ixx>1.22991121869075e-05</ixx>
+          <ixy>-1.00533403881756e-11</ixy>
+          <ixz>-9.29935738737904e-12</ixz>
+          <iyy>1.1729796157896801e-05</iyy>
+          <iyz>6.2781080703759997e-11</iyz>
+          <izz>1.19910068357189e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_4_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.0 0.0 1</diffuse>
+          <ambient>0.4 0.0 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='knee_4_joint' type='revolute'>
+      <pose relative_to='hip_4_link'>0 0.051999999999999998 0 1.5707999999999998 -0.64175000000000015 1.5708</pose>
+      <parent>hip_4_link</parent>
+      <child>knee_4_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.3</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='knee_4_link'>
+      <pose relative_to='knee_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.023873773565407898 -0.00112314751322129 -0.00065668697176407597 0 0 0</pose>
+        <mass>0.058628182518945401</mass>
+        <inertia>
+          <ixx>1.2548402315028799e-05</ixx>
+          <ixy>7.35564163240945e-07</ixy>
+          <ixz>1.9100854182712499e-07</ixz>
+          <iyy>1.7793225569768499e-05</iyy>
+          <iyz>1.4998582096906501e-09</iyz>
+          <izz>1.33019893280059e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='knee_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='knee_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_4_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.4 0.0 1</diffuse>
+          <ambient>0.0 0.4 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='ankle_4_joint' type='revolute'>
+      <pose relative_to='knee_4_link'>0.065000000000000002 -0.014999999999999999 -6.0000000000000002e-05 0 0 -1.1778</pose>
+      <parent>knee_4_link</parent>
+      <child>ankle_4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.15</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='ankle_4_link'>
+      <pose relative_to='ankle_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.029806609931325091 -0.014452007378337531 -0.00035459077132337161 0 0 0</pose>
+        <mass>0.062997187229657081</mass>
+        <inertia>
+          <ixx>3.6876950910255137e-05</ixx>
+          <ixy>1.301535916435549e-05</ixy>
+          <ixz>1.923766398332915e-07</ixz>
+          <iyy>2.58856271965585e-05</iyy>
+          <iyz>-5.905612255131772e-09</iyz>
+          <izz>4.5521276837775597e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ankle_4_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='ankle_4_link_fixed_joint_lump__tip_4_link_collision_1'>
+        <pose>0.084980037778106005 -0.086417797902876597 -6.0000000000254301e-05 2.129301687433077 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ankle_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_4_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+      <visual name='ankle_4_link_fixed_joint_lump__tip_4_link_visual_1'>
+        <pose>0.084980037778106005 -0.086417797902876597 -6.0000000000254301e-05 2.129301687433077 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_4_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.367647082 0.367647082 0.367647082 1</diffuse>
+          <ambient>0.367647082 0.367647082 0.367647082 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='hip_5_joint' type='revolute'>
+      <pose relative_to='base_link'>0 0.069779999999999995 0.015939999999999999 0 0 -0.043686000000000003</pose>
+      <parent>base_link</parent>
+      <child>hip_5_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1.0</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_5_link'>
+      <pose relative_to='hip_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00054357875334659601 0.026007289260197599 0.000543928474950495 0 0 0</pose>
+        <mass>0.0288571734423381</mass>
+        <inertia>
+          <ixx>1.22991274730186e-05</ixx>
+          <ixy>-9.6456595453219403e-12</ixy>
+          <ixz>-7.04600486300236e-12</ixz>
+          <iyy>1.1729811384791101e-05</iyy>
+          <iyz>6.4606815074773599e-11</iyz>
+          <izz>1.19910033117489e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_5_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_5_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.4 0.0 0.0 1</diffuse>
+          <ambient>0.4 0.0 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='knee_5_joint' type='revolute'>
+      <pose relative_to='hip_5_link'>0 0.051999999999999998 0 1.5707999999999998 -0.64175000000000015 1.5708</pose>
+      <parent>hip_5_link</parent>
+      <child>knee_5_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.3</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='knee_5_link'>
+      <pose relative_to='knee_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.023873779247237902 -0.00112314915113315 -0.00065668924808076601 0 0 0</pose>
+        <mass>0.058628186287941503</mass>
+        <inertia>
+          <ixx>1.25484017021316e-05</ixx>
+          <ixy>7.3556388291043395e-07</ixy>
+          <ixz>1.9100853475515001e-07</ixz>
+          <iyy>1.7793225674405901e-05</iyy>
+          <iyz>1.4998236596189101e-09</iyz>
+          <izz>1.33019890464726e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='knee_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_5_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='knee_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_5_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.4 0.0 1</diffuse>
+          <ambient>0.0 0.4 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='ankle_5_joint' type='revolute'>
+      <pose relative_to='knee_5_link'>0.065000000000000002 -0.014999999999999999 -6.0000000000000002e-05 0 0 -1.1778</pose>
+      <parent>knee_5_link</parent>
+      <child>ankle_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.15</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='ankle_5_link'>
+      <pose relative_to='ankle_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.029806668635846169 -0.01445202804891723 -0.0003546120008289423 0 0 0</pose>
+        <mass>0.062997092914686387</mass>
+        <inertia>
+          <ixx>3.6876930402782958e-05</ixx>
+          <ixy>1.30153596257451e-05</ixy>
+          <ixz>1.9234338956359391e-07</ixz>
+          <iyy>2.588556377290388e-05</iyy>
+          <iyz>-5.9066770772745453e-09</iyz>
+          <izz>4.5521236288549077e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ankle_5_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_5_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='ankle_5_link_fixed_joint_lump__tip_5_link_collision_1'>
+        <pose>0.084980037778106005 -0.086417797902876597 -6.0000000000393099e-05 2.129301687433077 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_5_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ankle_5_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_5_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+      <visual name='ankle_5_link_fixed_joint_lump__tip_5_link_visual_1'>
+        <pose>0.084980037778106005 -0.086417797902876597 -6.0000000000393099e-05 2.129301687433077 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_5_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.367647082 0.367647082 0.367647082 1</diffuse>
+          <ambient>0.367647082 0.367647082 0.367647082 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='hip_6_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.11551 0.065505999999999995 0.015939999999999999 0 0 0.74171000000000009</pose>
+      <parent>base_link</parent>
+      <child>hip_6_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1.0</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_6_link'>
+      <pose relative_to='hip_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00054356470045269201 0.026007282727889901 0.00054391745622381403 0 0 0</pose>
+        <mass>0.028857126372038001</mass>
+        <inertia>
+          <ixx>1.22991121869075e-05</ixx>
+          <ixy>-1.0053340373776001e-11</ixy>
+          <ixz>-9.2993573865158899e-12</ixz>
+          <iyy>1.1729796157896801e-05</iyy>
+          <iyz>6.2781080710837496e-11</iyz>
+          <izz>1.19910068357189e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_6_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/hip_6_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='knee_6_joint' type='revolute'>
+      <pose relative_to='hip_6_link'>0 0.051999999999999998 0 1.5707999999999998 -0.64175000000000015 1.5708</pose>
+      <parent>hip_6_link</parent>
+      <child>knee_6_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.3</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='knee_6_link'>
+      <pose relative_to='knee_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0238737735654081 -0.0011231475132212601 -0.00065668697176415902 0 0 0</pose>
+        <mass>0.058628182518945401</mass>
+        <inertia>
+          <ixx>1.2548402315028799e-05</ixx>
+          <ixy>7.3556416324094404e-07</ixy>
+          <ixz>1.9100854182714201e-07</ixz>
+          <iyy>1.7793225569768499e-05</iyy>
+          <iyz>1.49985820968599e-09</iyz>
+          <izz>1.33019893280058e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='knee_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_6_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='knee_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/knee_6_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.4 0.0 1</diffuse>
+          <ambient>0.0 0.4 0.0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='ankle_6_joint' type='revolute'>
+      <pose relative_to='knee_6_link'>0.065000000000000002 -0.014999999999999999 -6.0000000000000002e-05 0 0 -1.1778</pose>
+      <parent>knee_6_link</parent>
+      <child>ankle_6_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>0.15</effort>
+          <velocity>0.10000000000000001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='ankle_6_link'>
+      <pose relative_to='ankle_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.029806609931325279 -0.01445200737833763 -0.00035459077132348209 0 0 0</pose>
+        <mass>0.062997187229656887</mass>
+        <inertia>
+          <ixx>3.6876950910255543e-05</ixx>
+          <ixy>1.301535916435558e-05</ixy>
+          <ixz>1.923766398333267e-07</ixz>
+          <iyy>2.5885627196558599e-05</iyy>
+          <iyz>-5.9056122551515176e-09</iyz>
+          <izz>4.5521276837776038e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ankle_6_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_6_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='ankle_6_link_fixed_joint_lump__tip_6_link_collision_1'>
+        <pose>0.084980037778106005 -0.086417797902876695 -6.0000000000282003e-05 2.129301687433077 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_6_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ankle_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/ankle_6_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0 0.0 0.4 1</diffuse>
+          <ambient>0.0 0.0 0.4 1</ambient>
+        </material>
+      </visual>
+      <visual name='ankle_6_link_fixed_joint_lump__tip_6_link_visual_1'>
+        <pose>0.084980037778106005 -0.086417797902876695 -6.0000000000282003e-05 2.129301687433077 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hexapod/meshes/tip_6_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.367647082 0.367647082 0.367647082 1</diffuse>
+          <ambient>0.367647082 0.367647082 0.367647082 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='T260_joint' attached_to='base_link'>
+      <pose>0.12194437158779101 -0.0078500000000002804 0.089361887308834306 -1.5707963267948899 0 -1.5707963267949003</pose>
+    </frame>
+    <frame name='T260_link' attached_to='T260_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='realsense_joint' attached_to='base_link'>
+      <pose>0.12204 -0.0001 0.059249999999999997 1.5708 -5.5511151231257827e-17 1.5708</pose>
+    </frame>
+    <frame name='realsense_link' attached_to='realsense_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='tip_1_joint' attached_to='ankle_1_link'>
+      <pose>-0.08498 -0.086417999999999995 -6.0000000000000002e-05 -2.1292926535379801 -1.5707926536057681 3.1415926535293441</pose>
+    </frame>
+    <frame name='tip_1_link' attached_to='tip_1_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='tip_2_joint' attached_to='ankle_2_link'>
+      <pose>-0.084980037778106005 -0.086417797902876695 -5.99999999996714e-05 -1.0122909661567201 -1.5707963267948966 0</pose>
+    </frame>
+    <frame name='tip_2_link' attached_to='tip_2_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='tip_3_joint' attached_to='ankle_3_link'>
+      <pose>-0.084980037778106005 -0.086417797902876597 -5.9999999999782402e-05 -1.5708 -1.5707963267948966 0</pose>
+    </frame>
+    <frame name='tip_3_link' attached_to='tip_3_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='tip_4_joint' attached_to='ankle_4_link'>
+      <pose>0.084980037778106005 -0.086417797902876597 -6.0000000000254301e-05 -2.1293016874330801 -1.5707963118937354 0</pose>
+    </frame>
+    <frame name='tip_4_link' attached_to='tip_4_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='tip_5_joint' attached_to='ankle_5_link'>
+      <pose>0.084980037778106005 -0.086417797902876597 -6.0000000000393099e-05 -2.1293016874330801 -1.5707963118937354 0</pose>
+    </frame>
+    <frame name='tip_5_link' attached_to='tip_5_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='tip_6_joint' attached_to='ankle_6_link'>
+      <pose>0.084980037778106005 -0.086417797902876695 -6.0000000000282003e-05 -2.1293016874330801 -1.5707963118937354 0</pose>
+    </frame>
+    <frame name='tip_6_link' attached_to='tip_6_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

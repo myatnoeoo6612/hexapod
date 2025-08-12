@@ -1,0 +1,37 @@
+[0.955s] Invoking command in '/home/myat/hex_ws/src/hexapod_description': PYTHONPATH=/home/myat/hex_ws/build/hexapod_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_description build --build-base /home/myat/hex_ws/build/hexapod_description/build install --record /home/myat/hex_ws/build/hexapod_description/install.log --single-version-externally-managed install_data
+[1.177s] running egg_info
+[1.178s] creating ../../build/hexapod_description/hexapod_description.egg-info
+[1.178s] writing ../../build/hexapod_description/hexapod_description.egg-info/PKG-INFO
+[1.178s] writing dependency_links to ../../build/hexapod_description/hexapod_description.egg-info/dependency_links.txt
+[1.178s] writing entry points to ../../build/hexapod_description/hexapod_description.egg-info/entry_points.txt
+[1.178s] writing requirements to ../../build/hexapod_description/hexapod_description.egg-info/requires.txt
+[1.178s] writing top-level names to ../../build/hexapod_description/hexapod_description.egg-info/top_level.txt
+[1.178s] writing manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+[1.179s] reading manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+[1.180s] writing manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+[1.180s] running build
+[1.180s] running build_py
+[1.180s] creating /home/myat/hex_ws/build/hexapod_description/build
+[1.180s] creating /home/myat/hex_ws/build/hexapod_description/build/lib
+[1.180s] creating /home/myat/hex_ws/build/hexapod_description/build/lib/hexapod_description
+[1.181s] copying hexapod_description/__init__.py -> /home/myat/hex_ws/build/hexapod_description/build/lib/hexapod_description
+[1.181s] running install
+[1.181s] running install_lib
+[1.181s] creating /home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod_description
+[1.181s] copying /home/myat/hex_ws/build/hexapod_description/build/lib/hexapod_description/__init__.py -> /home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod_description
+[1.182s] byte-compiling /home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod_description/__init__.py to __init__.cpython-310.pyc
+[1.182s] running install_data
+[1.182s] creating /home/myat/hex_ws/install/hexapod_description/share/ament_index
+[1.182s] creating /home/myat/hex_ws/install/hexapod_description/share/ament_index/resource_index
+[1.182s] creating /home/myat/hex_ws/install/hexapod_description/share/ament_index/resource_index/packages
+[1.182s] copying resource/hexapod_description -> /home/myat/hex_ws/install/hexapod_description/share/ament_index/resource_index/packages
+[1.182s] copying package.xml -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description
+[1.182s] creating /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/urdf
+[1.182s] copying urdf/hexapod.urdf -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/urdf
+[1.183s] creating /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/world
+[1.183s] copying world/default.sdf -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/world
+[1.183s] running install_egg_info
+[1.184s] Copying ../../build/hexapod_description/hexapod_description.egg-info to /home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod_description-0.0.0-py3.10.egg-info
+[1.185s] running install_scripts
+[1.200s] writing list of installed files to '/home/myat/hex_ws/build/hexapod_description/install.log'
+[1.245s] Invoked command in '/home/myat/hex_ws/src/hexapod_description' returned '0': PYTHONPATH=/home/myat/hex_ws/build/hexapod_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_description build --build-base /home/myat/hex_ws/build/hexapod_description/build install --record /home/myat/hex_ws/build/hexapod_description/install.log --single-version-externally-managed install_data

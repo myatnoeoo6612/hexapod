@@ -1,0 +1,20 @@
+running egg_info
+writing ../../build/hexapod_description/hexapod_description.egg-info/PKG-INFO
+writing dependency_links to ../../build/hexapod_description/hexapod_description.egg-info/dependency_links.txt
+writing entry points to ../../build/hexapod_description/hexapod_description.egg-info/entry_points.txt
+writing requirements to ../../build/hexapod_description/hexapod_description.egg-info/requires.txt
+writing top-level names to ../../build/hexapod_description/hexapod_description.egg-info/top_level.txt
+reading manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+writing manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+creating /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/config
+copying config/controllers.yaml -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/config
+running install_egg_info
+removing '/home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod_description-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/hexapod_description/hexapod_description.egg-info to /home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod_description-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/myat/hex_ws/build/hexapod_description/install.log'

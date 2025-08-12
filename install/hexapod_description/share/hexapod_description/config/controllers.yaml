@@ -1,0 +1,150 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 500
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    hip_1_joint_position_controller:
+      type: position_controllers/JointPositionController
+      ros__parameters:
+        joint: hip_1_joint
+        interface_name: position
+        update_rate: 100
+
+    knee_1_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [knee_1_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    ankle_1_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [ankle_1_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    hip_2_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [hip_2_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    knee_2_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [knee_2_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    ankle_2_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [ankle_2_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    hip_3_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [hip_3_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    knee_3_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [knee_3_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    ankle_3_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [ankle_3_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    hip_4_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [hip_4_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    knee_4_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [knee_4_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    ankle_4_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [ankle_4_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    hip_5_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [hip_5_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    knee_5_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [knee_5_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    ankle_5_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [ankle_5_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    hip_6_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [hip_6_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    knee_6_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [knee_6_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500
+
+    ankle_6_joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      ros__parameters:
+        joints: [ankle_6_joint]
+        command_interfaces: [position]
+        state_interfaces: [position, velocity]
+        update_rate: 500

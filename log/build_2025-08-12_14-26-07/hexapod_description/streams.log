@@ -1,0 +1,21 @@
+[0.869s] Invoking command in '/home/myat/hex_ws/build/hexapod_description': PYTHONPATH=/home/myat/hex_ws/build/hexapod_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/myat/hex_ws/build/hexapod_description/build --no-deps symlink_data --force
+[1.101s] running develop
+[1.276s] running egg_info
+[1.276s] writing hexapod_description.egg-info/PKG-INFO
+[1.276s] writing dependency_links to hexapod_description.egg-info/dependency_links.txt
+[1.276s] writing entry points to hexapod_description.egg-info/entry_points.txt
+[1.277s] writing requirements to hexapod_description.egg-info/requires.txt
+[1.277s] writing top-level names to hexapod_description.egg-info/top_level.txt
+[1.279s] reading manifest file 'hexapod_description.egg-info/SOURCES.txt'
+[1.280s] writing manifest file 'hexapod_description.egg-info/SOURCES.txt'
+[1.281s] running build_ext
+[1.281s] Creating /home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages/hexapod-description.egg-link (link to .)
+[1.282s] 
+[1.282s] Installed /home/myat/hex_ws/build/hexapod_description
+[1.282s] running symlink_data
+[1.282s] symbolically linking /home/myat/hex_ws/build/hexapod_description/resource/hexapod_description -> /home/myat/hex_ws/install/hexapod_description/share/ament_index/resource_index/packages
+[1.282s] symbolically linking /home/myat/hex_ws/build/hexapod_description/package.xml -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description
+[1.282s] symbolically linking /home/myat/hex_ws/build/hexapod_description/urdf/hexapod.urdf -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/urdf
+[1.282s] symbolically linking /home/myat/hex_ws/build/hexapod_description/world/default.sdf -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/world
+[1.282s] symbolically linking /home/myat/hex_ws/build/hexapod_description/config/controllers.yaml -> /home/myat/hex_ws/install/hexapod_description/share/hexapod_description/config
+[1.308s] Invoked command in '/home/myat/hex_ws/build/hexapod_description' returned '0': PYTHONPATH=/home/myat/hex_ws/build/hexapod_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/myat/hex_ws/build/hexapod_description/build --no-deps symlink_data --force

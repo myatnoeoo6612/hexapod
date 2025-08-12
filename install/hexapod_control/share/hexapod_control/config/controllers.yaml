@@ -1,0 +1,120 @@
+# controllers.yaml
+controller_manager:
+  ros__parameters:
+    update_rate: 200
+    use_sim_time: true
+
+# Standard joint state broadcaster
+joint_state_broadcaster:
+  ros__parameters: {}
+
+# 18 Joint position controllers (hip/knee/ankle for legs 1..6)
+# Tune the PID numbers below as needed (conservative starting values)
+hip_1_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: hip_1_joint
+  ros__parameters:
+    pid: {p: 30.0, i: 0.0, d: 1.0}
+
+knee_1_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: knee_1_joint
+  ros__parameters:
+    pid: {p: 50.0, i: 0.0, d: 1.5}
+
+ankle_1_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: ankle_1_joint
+  ros__parameters:
+    pid: {p: 20.0, i: 0.0, d: 0.5}
+
+hip_2_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: hip_2_joint
+  ros__parameters:
+    pid: {p: 30.0, i: 0.0, d: 1.0}
+
+knee_2_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: knee_2_joint
+  ros__parameters:
+    pid: {p: 50.0, i: 0.0, d: 1.5}
+
+ankle_2_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: ankle_2_joint
+  ros__parameters:
+    pid: {p: 20.0, i: 0.0, d: 0.5}
+
+hip_3_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: hip_3_joint
+  ros__parameters:
+    pid: {p: 30.0, i: 0.0, d: 1.0}
+
+knee_3_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: knee_3_joint
+  ros__parameters:
+    pid: {p: 50.0, i: 0.0, d: 1.5}
+
+ankle_3_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: ankle_3_joint
+  ros__parameters:
+    pid: {p: 20.0, i: 0.0, d: 0.5}
+
+hip_4_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: hip_4_joint
+  ros__parameters:
+    pid: {p: 30.0, i: 0.0, d: 1.0}
+
+knee_4_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: knee_4_joint
+  ros__parameters:
+    pid: {p: 50.0, i: 0.0, d: 1.5}
+
+ankle_4_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: ankle_4_joint
+  ros__parameters:
+    pid: {p: 20.0, i: 0.0, d: 0.5}
+
+hip_5_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: hip_5_joint
+  ros__parameters:
+    pid: {p: 30.0, i: 0.0, d: 1.0}
+
+knee_5_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: knee_5_joint
+  ros__parameters:
+    pid: {p: 50.0, i: 0.0, d: 1.5}
+
+ankle_5_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: ankle_5_joint
+  ros__parameters:
+    pid: {p: 20.0, i: 0.0, d: 0.5}
+
+hip_6_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: hip_6_joint
+  ros__parameters:
+    pid: {p: 30.0, i: 0.0, d: 1.0}
+
+knee_6_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: knee_6_joint
+  ros__parameters:
+    pid: {p: 50.0, i: 0.0, d: 1.5}
+
+ankle_6_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: ankle_6_joint
+  ros__parameters:
+    pid: {p: 20.0, i: 0.0, d: 0.5}
+

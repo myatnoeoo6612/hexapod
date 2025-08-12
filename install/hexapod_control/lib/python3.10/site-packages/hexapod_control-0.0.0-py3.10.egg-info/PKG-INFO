@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: hexapod-control
+Version: 0.0.0
+Summary: Control package for hexapod robot with tripod gait in ROS 2 Humble + Gazebo Harmonic
+Home-page: UNKNOWN
+Maintainer: myat
+Maintainer-email: myatnoeoo772985799@gmail.com
+License: Apache License 2.0
+Platform: UNKNOWN
+
+UNKNOWN
+

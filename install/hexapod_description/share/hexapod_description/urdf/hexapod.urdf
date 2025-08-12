@@ -1,0 +1,1716 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot
+  name="hexapod">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0097741 -8.3675E-05 0.021466"
+        rpy="0 0 0" />
+      <mass
+        value="0.41864" />
+      <inertia
+        ixx="0.00023584"
+        ixy="1.4219E-07"
+        ixz="-3.6192E-07"
+        iyy="0.00054809"
+        iyz="-2.9889E-08"
+        izz="0.0007282" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hip_1_link">
+    <inertial>
+      <origin
+        xyz="0.00054356 -0.026007 0.00054392"
+        rpy="0 0 0" />
+      <mass
+        value="0.028857" />
+      <inertia
+        ixx="1.2299E-05"
+        ixy="-1.0053E-11"
+        ixz="9.2994E-12"
+        iyy="1.173E-05"
+        iyz="-6.2781E-11"
+        izz="1.1991E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_1_joint"
+    type="revolute">
+    <origin
+      xyz="0.11551 -0.065506 0.01594"
+      rpy="0 0 0.74171" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_1_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="knee_1_link">
+    <inertial>
+      <origin
+        xyz="-0.023874 -0.0011231 0.00065669"
+        rpy="0 0 0" />
+      <mass
+        value="0.058628" />
+      <inertia
+        ixx="1.2548E-05"
+        ixy="-7.3556E-07"
+        ixz="1.9101E-07"
+        iyy="1.7793E-05"
+        iyz="-1.4998E-09"
+        izz="1.3302E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_1_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.052 0"
+      rpy="1.5708 0.64175 1.5708" />
+    <parent
+      link="hip_1_link" />
+    <child
+      link="knee_1_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="ankle_1_link">
+    <inertial>
+      <origin
+        xyz="-0.029597 -0.014177 0.00035568"
+        rpy="0 0 0" />
+      <mass
+        value="0.062766" />
+      <inertia
+        ixx="3.5581E-05"
+        ixy="-1.203E-05"
+        ixz="1.9627E-07"
+        iyy="2.5133E-05"
+        iyz="1.1015E-08"
+        izz="4.3475E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_1_joint"
+    type="revolute">
+    <origin
+      xyz="-0.065 -0.015 6E-05"
+      rpy="0 0 1.1778" />
+    <parent
+      link="knee_1_link" />
+    <child
+      link="ankle_1_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="tip_1_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 0 0.0031433"
+        rpy="0 0 0" />
+      <mass
+        value="0.00023156" />
+      <inertia
+        ixx="1.3803E-09"
+        ixy="2.5849E-25"
+        ixz="-1.0986E-25"
+        iyy="1.3803E-09"
+        iyz="-6.22E-25"
+        izz="2.0603E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip_1_joint"
+    type="fixed">
+    <origin
+      xyz="-0.08498 -0.086418 6E-05"
+      rpy="1.0123 -1.5708 0" />
+    <parent
+      link="ankle_1_link" />
+    <child
+      link="tip_1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_2_link">
+    <inertial>
+      <origin
+        xyz="0.000543578753346596 -0.0260072892601975 0.000543928474950481"
+        rpy="0 0 0" />
+      <mass
+        value="0.0288571734423381" />
+      <inertia
+        ixx="1.22991274730186E-05"
+        ixy="-9.64565954955711E-12"
+        ixz="7.04600486487456E-12"
+        iyy="1.17298113847911E-05"
+        iyz="-6.46068150702416E-11"
+        izz="1.19910033117488E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_2_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.06978 0.01594"
+      rpy="0 0 -0.043686" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_2_link" />
+    <axis
+      xyz="-0.015899 0.015899 0.99975" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="knee_2_link">
+    <inertial>
+      <origin
+        xyz="-0.023874 -0.0011231 0.00065669"
+        rpy="0 0 0" />
+      <mass
+        value="0.058628" />
+      <inertia
+        ixx="1.2548E-05"
+        ixy="-7.3556E-07"
+        ixz="1.9101E-07"
+        iyy="1.7793E-05"
+        iyz="-1.4999E-09"
+        izz="1.3302E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_2_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.052 0"
+      rpy="1.5708 0.64175 1.5708" />
+    <parent
+      link="hip_2_link" />
+    <child
+      link="knee_2_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="ankle_2_link">
+    <inertial>
+      <origin
+        xyz="-0.029597 -0.014177 0.0003557"
+        rpy="0 0 0" />
+      <mass
+        value="0.062766" />
+      <inertia
+        ixx="3.5581E-05"
+        ixy="-1.203E-05"
+        ixz="1.9624E-07"
+        iyy="2.5133E-05"
+        iyz="1.1017E-08"
+        izz="4.3475E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_2_joint"
+    type="revolute">
+    <origin
+      xyz="-0.065 -0.015 6E-05"
+      rpy="0 0 1.1778" />
+    <parent
+      link="knee_2_link" />
+    <child
+      link="ankle_2_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="tip_2_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0031433"
+        rpy="0 0 0" />
+      <mass
+        value="0.00023156" />
+      <inertia
+        ixx="1.3803E-09"
+        ixy="-2.6496E-25"
+        ixz="-2.2043E-24"
+        iyy="1.3803E-09"
+        iyz="8.5826E-25"
+        izz="2.0603E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip_2_joint"
+    type="fixed">
+    <origin
+      xyz="-0.084980037778106 -0.0864177979028767 5.99999999996714E-05"
+      rpy="1.01229096615672 -1.5707963267949 0" />
+    <parent
+      link="ankle_2_link" />
+    <child
+      link="tip_2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_3_link">
+    <inertial>
+      <origin
+        xyz="0.000543564700452692 -0.0260072827278898 0.00054391745622373"
+        rpy="0 0 0" />
+      <mass
+        value="0.028857126372038" />
+      <inertia
+        ixx="1.22991121869075E-05"
+        ixy="-1.00533403754701E-11"
+        ixz="9.29935738499628E-12"
+        iyy="1.17297961578967E-05"
+        iyz="-6.27810806999214E-11"
+        izz="1.19910068357189E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_3_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11551 -0.065506 0.01594"
+      rpy="0 0 -0.82908" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_3_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="knee_3_link">
+    <inertial>
+      <origin
+        xyz="-0.0238737736452943 -0.00112314758129339 0.000656687028118386"
+        rpy="0 0 0" />
+      <mass
+        value="0.0586281827753225" />
+      <inertia
+        ixx="1.2548402404045E-05"
+        ixy="-7.35564142655582E-07"
+        ixz="1.91008516552046E-07"
+        iyy="1.77932256315695E-05"
+        iyz="-1.49980581142997E-09"
+        izz="1.33019893805995E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_3_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.052 0"
+      rpy="1.5708 0.64175 1.5708" />
+    <parent
+      link="hip_3_link" />
+    <child
+      link="knee_3_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="ankle_3_link">
+    <inertial>
+      <origin
+        xyz="-0.02959691786708 -0.0141766754741153 0.000355677581965835"
+        rpy="0 0 0" />
+      <mass
+        value="0.0627656309071367" />
+      <inertia
+        ixx="3.5580867136193E-05"
+        ixy="-1.20297827496464E-05"
+        ixz="1.96268186936608E-07"
+        iyy="2.51328924785623E-05"
+        iyz="1.10153291067418E-08"
+        izz="4.34745590064361E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_3_joint"
+    type="revolute">
+    <origin
+      xyz="-0.065 -0.015 6E-05"
+      rpy="0 0 1.1778" />
+    <parent
+      link="knee_3_link" />
+    <child
+      link="ankle_3_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="tip_3_link">
+    <inertial>
+      <origin
+        xyz="0 -2.77555756156289E-17 0.00314327062228653"
+        rpy="0 0 0" />
+      <mass
+        value="0.000231556322520592" />
+      <inertia
+        ixx="1.38028217563739E-09"
+        ixy="-4.13590306276514E-25"
+        ixz="4.58826746025508E-25"
+        iyy="1.38028217563739E-09"
+        iyz="1.74483410460404E-25"
+        izz="2.06032180735138E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip_3_joint"
+    type="fixed">
+    <origin
+      xyz="-0.084980037778106 -0.0864177979028766 5.99999999997824E-05"
+      rpy="-0.576798590591291 -1.57079631189374 1.57079631189374" />
+    <parent
+      link="ankle_3_link" />
+    <child
+      link="tip_3_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_4_link">
+    <inertial>
+      <origin
+        xyz="-0.000543564700452664 0.0260072827278899 0.000543917456223758"
+        rpy="0 0 0" />
+      <mass
+        value="0.028857126372038" />
+      <inertia
+        ixx="1.22991121869075E-05"
+        ixy="-1.00533403881756E-11"
+        ixz="-9.29935738737904E-12"
+        iyy="1.17297961578968E-05"
+        iyz="6.278108070376E-11"
+        izz="1.19910068357189E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_4_joint"
+    type="revolute">
+    <origin
+      xyz="0.11551 0.065506 0.01594"
+      rpy="0 0 -0.82908" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_4_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="knee_4_link">
+    <inertial>
+      <origin
+        xyz="0.0238737735654079 -0.00112314751322129 -0.000656686971764076"
+        rpy="0 0 0" />
+      <mass
+        value="0.0586281825189454" />
+      <inertia
+        ixx="1.25484023150288E-05"
+        ixy="7.35564163240945E-07"
+        ixz="1.91008541827125E-07"
+        iyy="1.77932255697685E-05"
+        iyz="1.49985820969065E-09"
+        izz="1.33019893280059E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_4_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.052 0"
+      rpy="1.5708 -0.64175 1.5708" />
+    <parent
+      link="hip_4_link" />
+    <child
+      link="knee_4_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="ankle_4_link">
+    <inertial>
+      <origin
+        xyz="0.0295969178670799 -0.0141766754741153 -0.000355677581965919"
+        rpy="0 0 0" />
+      <mass
+        value="0.0627656309071365" />
+      <inertia
+        ixx="3.55808671361926E-05"
+        ixy="1.20297827496463E-05"
+        ixz="1.96268186936672E-07"
+        iyy="2.51328924785623E-05"
+        iyz="-1.10153291068452E-08"
+        izz="4.34745590064357E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_4_joint"
+    type="revolute">
+    <origin
+      xyz="0.065 -0.015 -6E-05"
+      rpy="0 0 -1.1778" />
+    <parent
+      link="knee_4_link" />
+    <child
+      link="ankle_4_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="tip_4_link">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 0.00314327062228655"
+        rpy="0 0 0" />
+      <mass
+        value="0.000231556322520592" />
+      <inertia
+        ixx="1.38028217563739E-09"
+        ixy="-5.16987882845642E-25"
+        ixz="-1.80461082855807E-24"
+        iyy="1.38028217563739E-09"
+        iyz="-1.72383147186344E-24"
+        izz="2.06032180735138E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip_4_joint"
+    type="fixed">
+    <origin
+      xyz="0.084980037778106 -0.0864177979028766 -6.00000000002543E-05"
+      rpy="2.12930168743308 -1.5707963267949 0" />
+    <parent
+      link="ankle_4_link" />
+    <child
+      link="tip_4_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_5_link">
+    <inertial>
+      <origin
+        xyz="-0.000543578753346596 0.0260072892601976 0.000543928474950495"
+        rpy="0 0 0" />
+      <mass
+        value="0.0288571734423381" />
+      <inertia
+        ixx="1.22991274730186E-05"
+        ixy="-9.64565954532194E-12"
+        ixz="-7.04600486300236E-12"
+        iyy="1.17298113847911E-05"
+        iyz="6.46068150747736E-11"
+        izz="1.19910033117489E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.06978 0.01594"
+      rpy="0 0 -0.043686" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_5_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="knee_5_link">
+    <inertial>
+      <origin
+        xyz="0.0238737792472379 -0.00112314915113315 -0.000656689248080766"
+        rpy="0 0 0" />
+      <mass
+        value="0.0586281862879415" />
+      <inertia
+        ixx="1.25484017021316E-05"
+        ixy="7.35563882910434E-07"
+        ixz="1.9100853475515E-07"
+        iyy="1.77932256744059E-05"
+        iyz="1.49982365961891E-09"
+        izz="1.33019890464726E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.052 0"
+      rpy="1.5708 -0.64175 1.5708" />
+    <parent
+      link="hip_5_link" />
+    <child
+      link="knee_5_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="ankle_5_link">
+    <inertial>
+      <origin
+        xyz="0.0295969764730804 -0.0141766958072245 -0.00035569889142506"
+        rpy="0 0 0" />
+      <mass
+        value="0.0627655365921658" />
+      <inertia
+        ixx="3.55808473357313E-05"
+        ixy="1.20297844968868E-05"
+        ixz="1.962352131109E-07"
+        iyy="2.51328305988272E-05"
+        iyz="-1.10167607705277E-08"
+        izz="4.3474520713954E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_5_joint"
+    type="revolute">
+    <origin
+      xyz="0.065 -0.015 -6E-05"
+      rpy="0 0 -1.1778" />
+    <parent
+      link="knee_5_link" />
+    <child
+      link="ankle_5_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="tip_5_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 0.00314327062228653"
+        rpy="0 0 0" />
+      <mass
+        value="0.000231556322520592" />
+      <inertia
+        ixx="1.38028217563739E-09"
+        ixy="-1.93870456067116E-26"
+        ixz="2.6588525256038E-24"
+        iyy="1.38028217563739E-09"
+        iyz="-8.02208431737351E-25"
+        izz="2.06032180735138E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip_5_joint"
+    type="fixed">
+    <origin
+      xyz="0.084980037778106 -0.0864177979028766 -6.00000000003931E-05"
+      rpy="2.12930168743308 -1.5707963267949 0" />
+    <parent
+      link="ankle_5_link" />
+    <child
+      link="tip_5_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_6_link">
+    <inertial>
+      <origin
+        xyz="-0.000543564700452692 0.0260072827278899 0.000543917456223814"
+        rpy="0 0 0" />
+      <mass
+        value="0.028857126372038" />
+      <inertia
+        ixx="1.22991121869075E-05"
+        ixy="-1.0053340373776E-11"
+        ixz="-9.29935738651589E-12"
+        iyy="1.17297961578968E-05"
+        iyz="6.27810807108375E-11"
+        izz="1.19910068357189E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/hip_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_6_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11551 0.065506 0.01594"
+      rpy="0 0 0.74171" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_6_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="knee_6_link">
+    <inertial>
+      <origin
+        xyz="0.0238737735654081 -0.00112314751322126 -0.000656686971764159"
+        rpy="0 0 0" />
+      <mass
+        value="0.0586281825189454" />
+      <inertia
+        ixx="1.25484023150288E-05"
+        ixy="7.35564163240944E-07"
+        ixz="1.91008541827142E-07"
+        iyy="1.77932255697685E-05"
+        iyz="1.49985820968599E-09"
+        izz="1.33019893280058E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/knee_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_6_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.052 0"
+      rpy="1.5708 -0.64175 1.5708" />
+    <parent
+      link="hip_6_link" />
+    <child
+      link="knee_6_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="ankle_6_link">
+    <inertial>
+      <origin
+        xyz="0.0295969178670801 -0.0141766754741154 -0.00035567758196603"
+        rpy="0 0 0" />
+      <mass
+        value="0.0627656309071363" />
+      <inertia
+        ixx="3.5580867136193E-05"
+        ixy="1.20297827496464E-05"
+        ixz="1.96268186936708E-07"
+        iyy="2.51328924785624E-05"
+        iyz="-1.10153291068663E-08"
+        izz="4.34745590064361E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/ankle_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_6_joint"
+    type="revolute">
+    <origin
+      xyz="0.065 -0.015 -6E-05"
+      rpy="0 0 -1.1778" />
+    <parent
+      link="knee_6_link" />
+    <child
+      link="ankle_6_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10.0"
+      velocity="0.1" />
+    <!-- <hardware_interface>
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </hardware_interface>   -->
+  </joint>
+  <link
+    name="tip_6_link">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-17 0.00314327062228654"
+        rpy="0 0 0" />
+      <mass
+        value="0.000231556322520592" />
+      <inertia
+        ixx="1.38028217563739E-09"
+        ixy="5.16987882845642E-26"
+        ixz="2.06795153138257E-25"
+        iyy="1.38028217563739E-09"
+        iyz="3.19886252510741E-25"
+        izz="2.06032180735138E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/tip_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tip_6_joint"
+    type="fixed">
+    <origin
+      xyz="0.084980037778106 -0.0864177979028767 -6.0000000000282E-05"
+      rpy="2.12930168743308 -1.5707963267949 0" />
+    <parent
+      link="ankle_6_link" />
+    <child
+      link="tip_6_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="realsense_link">
+    <inertial>
+      <origin
+        xyz="0.00140825896450351 -2.32756500229692E-05 -0.0133926578341219"
+        rpy="0 0 0" />
+      <mass
+        value="0.0364735553229671" />
+      <inertia
+        ixx="3.50647181540533E-06"
+        ixy="1.74318899427499E-09"
+        ixz="2.10670740368704E-07"
+        iyy="2.36126296789956E-05"
+        iyz="1.01535790393155E-08"
+        izz="2.34043624937718E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/realsense_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.701960784313725 0.701960784313725 0.701960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/realsense_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="realsense_joint"
+    type="fixed">
+    <origin
+      xyz="0.12204 -0.0001 0.05925"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="realsense_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="T260_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/T260_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod/meshes/T260_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="T260_joint"
+    type="fixed">
+    <origin
+      xyz="0.121944371587791 -0.00785000000000028 0.0893618873088343"
+      rpy="-1.57079632679489 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="T260_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <ros2_control name="hexapod_ros2_control" type="system">
+    <hardware>
+      <!-- Gazebo system plugin provides the simulated hardware -->
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <!-- declare every actuated joint's interfaces (position control) -->
+    <joint name="hip_1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee_1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle_1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  
+    <joint name="hip_2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee_2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle_2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  
+    <joint name="hip_3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee_3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle_3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  
+    <joint name="hip_4_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee_4_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle_4_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  
+    <joint name="hip_5_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee_5_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle_5_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  
+    <joint name="hip_6_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="knee_6_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="ankle_6_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <!-- <robot_namespace>my_robot</robot_namespace> -->
+      <parameters>/home/myat/hex_ws/install/hexapod_description/share/hexapod_description/config/controllers.yaml</parameters>
+      <update_rate>250</update_rate>
+    </plugin>
+  </gazebo>
+  
+  
+</robot>

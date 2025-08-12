@@ -1,0 +1,3 @@
+[console_scripts]
+tripod_gait_node = hexapod_control.tripod_gait_node:main
+
