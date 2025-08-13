@@ -1,0 +1,24 @@
+[1.137s] Invoking command in '/home/myat/hex_ws/src/hexapod_control': PYTHONPATH=/home/myat/hex_ws/build/hexapod_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_control build --build-base /home/myat/hex_ws/build/hexapod_control/build install --record /home/myat/hex_ws/build/hexapod_control/install.log --single-version-externally-managed install_data
+[1.430s] running egg_info
+[1.431s] writing ../../build/hexapod_control/hexapod_control.egg-info/PKG-INFO
+[1.431s] writing dependency_links to ../../build/hexapod_control/hexapod_control.egg-info/dependency_links.txt
+[1.431s] writing entry points to ../../build/hexapod_control/hexapod_control.egg-info/entry_points.txt
+[1.431s] writing requirements to ../../build/hexapod_control/hexapod_control.egg-info/requires.txt
+[1.432s] writing top-level names to ../../build/hexapod_control/hexapod_control.egg-info/top_level.txt
+[1.433s] reading manifest file '../../build/hexapod_control/hexapod_control.egg-info/SOURCES.txt'
+[1.435s] writing manifest file '../../build/hexapod_control/hexapod_control.egg-info/SOURCES.txt'
+[1.435s] running build
+[1.435s] running build_py
+[1.435s] copying hexapod_control/tripod_gait_node.py -> /home/myat/hex_ws/build/hexapod_control/build/lib/hexapod_control
+[1.436s] running install
+[1.436s] running install_lib
+[1.438s] copying /home/myat/hex_ws/build/hexapod_control/build/lib/hexapod_control/tripod_gait_node.py -> /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control
+[1.438s] byte-compiling /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/tripod_gait_node.py to tripod_gait_node.cpython-310.pyc
+[1.439s] running install_data
+[1.439s] running install_egg_info
+[1.441s] removing '/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control-0.0.0-py3.10.egg-info' (and everything under it)
+[1.441s] Copying ../../build/hexapod_control/hexapod_control.egg-info to /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control-0.0.0-py3.10.egg-info
+[1.442s] running install_scripts
+[1.460s] Installing tripod_gait_node script to /home/myat/hex_ws/install/hexapod_control/lib/hexapod_control
+[1.461s] writing list of installed files to '/home/myat/hex_ws/build/hexapod_control/install.log'
+[1.515s] Invoked command in '/home/myat/hex_ws/src/hexapod_control' returned '0': PYTHONPATH=/home/myat/hex_ws/build/hexapod_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_control build --build-base /home/myat/hex_ws/build/hexapod_control/build install --record /home/myat/hex_ws/build/hexapod_control/install.log --single-version-externally-managed install_data

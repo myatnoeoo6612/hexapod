@@ -1,0 +1,17 @@
+[0.893s] Invoking command in '/home/myat/hex_ws/build/hexapod_control': PYTHONPATH=/home/myat/hex_ws/build/hexapod_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/myat/hex_ws/build/hexapod_control/build --no-deps symlink_data
+[1.128s] running develop
+[1.306s] running egg_info
+[1.306s] writing hexapod_control.egg-info/PKG-INFO
+[1.306s] writing dependency_links to hexapod_control.egg-info/dependency_links.txt
+[1.306s] writing entry points to hexapod_control.egg-info/entry_points.txt
+[1.306s] writing requirements to hexapod_control.egg-info/requires.txt
+[1.307s] writing top-level names to hexapod_control.egg-info/top_level.txt
+[1.308s] reading manifest file 'hexapod_control.egg-info/SOURCES.txt'
+[1.309s] writing manifest file 'hexapod_control.egg-info/SOURCES.txt'
+[1.310s] running build_ext
+[1.310s] Creating /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod-control.egg-link (link to .)
+[1.310s] Installing tripod_gait_node script to /home/myat/hex_ws/install/hexapod_control/lib/hexapod_control
+[1.311s] 
+[1.311s] Installed /home/myat/hex_ws/build/hexapod_control
+[1.311s] running symlink_data
+[1.343s] Invoked command in '/home/myat/hex_ws/build/hexapod_control' returned '0': PYTHONPATH=/home/myat/hex_ws/build/hexapod_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/myat/hex_ws/build/hexapod_control/build --no-deps symlink_data

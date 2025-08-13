@@ -26,10 +26,8 @@
         <mesh
           filename="package://hexapod/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -93,12 +91,12 @@
     <child
       link="hip_1_link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      lower="1.5708"
+      upper="-1.5708"
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -160,8 +158,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -308,10 +306,8 @@
         <mesh
           filename="package://hexapod/meshes/hip_2_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -339,8 +335,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -371,10 +367,8 @@
         <mesh
           filename="package://hexapod/meshes/knee_2_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -402,8 +396,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -434,10 +428,8 @@
         <mesh
           filename="package://hexapod/meshes/ankle_2_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -465,8 +457,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -577,12 +569,12 @@
     <child
       link="hip_3_link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      lower="1.5708"
+      upper="-1.5708"
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -644,8 +636,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -707,8 +699,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -823,8 +815,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -886,8 +878,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -949,8 +941,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1034,10 +1026,8 @@
         <mesh
           filename="package://hexapod/meshes/hip_5_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -1065,8 +1055,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1097,10 +1087,8 @@
         <mesh
           filename="package://hexapod/meshes/knee_5_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -1128,8 +1116,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1160,10 +1148,8 @@
         <mesh
           filename="package://hexapod/meshes/ankle_5_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
     <collision>
@@ -1191,8 +1177,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1307,8 +1293,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1370,8 +1356,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1433,8 +1419,8 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10.0"
-      velocity="0.1" />
+      effort="5.0"
+      velocity="5.0" />
     <!-- <hardware_interface>
       <command_interface name="position"/>
       <state_interface name="position"/>
@@ -1600,110 +1586,31 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <ros2_control name="hexapod_ros2_control" type="system">
+  <ros2_control name="GazeboSystem" type="system">
     <hardware>
-      <!-- Gazebo system plugin provides the simulated hardware -->
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
     </hardware>
-
-    <!-- declare every actuated joint's interfaces (position control) -->
-    <joint name="hip_1_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="knee_1_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="ankle_1_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  
-    <joint name="hip_2_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="knee_2_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="ankle_2_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  
-    <joint name="hip_3_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="knee_3_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="ankle_3_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  
-    <joint name="hip_4_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="knee_4_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="ankle_4_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  
-    <joint name="hip_5_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="knee_5_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="ankle_5_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  
-    <joint name="hip_6_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="knee_6_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="ankle_6_joint">
-      <command_interface name="position"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
+    
+    <joint name="hip_1_joint">   <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="knee_1_joint">  <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="ankle_1_joint"> <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="hip_2_joint">   <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="knee_2_joint">  <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="ankle_2_joint"> <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="hip_3_joint">   <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="knee_3_joint">  <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="ankle_3_joint"> <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="hip_4_joint">   <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="knee_4_joint">  <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="ankle_4_joint"> <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="hip_5_joint">   <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="knee_5_joint">  <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="ankle_5_joint"> <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="hip_6_joint">   <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="knee_6_joint">  <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    <joint name="ankle_6_joint"> <command_interface name="position"/> <state_interface name="position"/> <state_interface name="velocity"/> </joint>
+    
   </ros2_control>
-
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <!-- <robot_namespace>my_robot</robot_namespace> -->

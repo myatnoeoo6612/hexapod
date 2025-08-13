@@ -1,76 +1,87 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float64
-import math
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 class TripodGaitNode(Node):
     def __init__(self):
         super().__init__('tripod_gait_node')
 
-        # legs and joints
-        self.legs = [1,2,3,4,5,6]
-        self.joint_types = ['hip','knee','ankle']
+        self.publisher_ = self.create_publisher(
+            JointTrajectory,
+            '/hexapod_joint_trajectory_controller/joint_trajectory',
+            10
+        )
 
-        # publishers for each joint controller command topic:
-        # controllers are named: <joint>_<leg>_joint_position_controller
-        self.pubs = {}
-        for leg in self.legs:
-            for jt in self.joint_types:
-                ctrl = f'{jt}_{leg}_joint_position_controller'
-                topic = f'/{ctrl}/command'   # controller publishes command on this topic
-                # create publisher
-                self.pubs[(jt,leg)] = self.create_publisher(Float64, topic, 10)
+        self.joint_names = [
+            'hip_1_joint', 'knee_1_joint', 'ankle_1_joint',
+            'hip_2_joint', 'knee_2_joint', 'ankle_2_joint',
+            'hip_3_joint', 'knee_3_joint', 'ankle_3_joint',
+            'hip_4_joint', 'knee_4_joint', 'ankle_4_joint',
+            'hip_5_joint', 'knee_5_joint', 'ankle_5_joint',
+            'hip_6_joint', 'knee_6_joint', 'ankle_6_joint'
+        ]
 
-        # gait params (tweak)
-        self.freq = 0.8        # gait cycles per second
-        self.hip_swing = 0.5   # radians (hip forward/back amplitude)
-        self.knee_lift = 0.6   # radians knee lift during swing
-        self.started = False
+        self.timer = self.create_timer(2.0, self.publish_gait)
+        self.phase = 0
 
-        # small startup delay to let controllers spawn
-        self.create_timer(2.0, self._start_gait)
+        self.get_logger().info("Tripod gait node with continuous sweep started.")
 
-    def _start_gait(self):
-        if not self.started:
-            # cancel the startup timer by setting flag and create main timer
-            self.started = True
-            self.get_logger().info('Starting tripod gait')
-            self.t0 = self.get_clock().now().nanoseconds / 1e9
-            self.create_timer(0.02, self._gait_loop)
+    def publish_gait(self):
+        msg = JointTrajectory()
+        msg.joint_names = self.joint_names
 
-    def _gait_loop(self):
-        t = self.get_clock().now().nanoseconds / 1e9 - self.t0
-        phase = (t * self.freq) % 1.0  # 0..1
-        # tripod A (odd legs) swing in phase [0,0.5), B (even) swing in [0.5,1)
-        if phase < 0.5:
-            s = phase * 2.0
-            swing_legs = [1,3,5]
-            stance_legs = [2,4,6]
+        forward_mag = -0.3   # forward hip rotation
+        backward_mag = 0.3 # backward hip rotation
+        knee_down = -0.3
+        knee_up = 0.2
+
+        if self.phase == 0:
+            swing_legs = [1, 3, 5]  # Tripod A
+            stance_legs = [2, 4, 6] # Tripod B
         else:
-            s = (phase - 0.5) * 2.0
-            swing_legs = [2,4,6]
-            stance_legs = [1,3,5]
+            swing_legs = [2, 4, 6]  # Tripod B
+            stance_legs = [1, 3, 5] # Tripod A
 
-        # swing interpolation (smooth)
-        for leg in swing_legs:
-            # hip: move from -hip_swing to +hip_swing across swing (simple sinus)
-            hip_cmd = -self.hip_swing * math.cos(math.pi * s) + 0.0
-            # knee: lift with sin shape
-            knee_cmd = self.knee_lift * math.sin(math.pi * s)
-            self.pubs[('hip',leg)].publish(Float64(data=hip_cmd))
-            self.pubs[('knee',leg)].publish(Float64(data=knee_cmd))
+        # Two points per phase: start & end
+        for t in [0.0, 1.0]:
+            positions = [0.0] * 18
 
-        # stance legs hold (on ground)
-        for leg in stance_legs:
-            hip_cmd = 0.0
-            knee_cmd = 0.0
-            self.pubs[('hip',leg)].publish(Float64(data=hip_cmd))
-            self.pubs[('knee',leg)].publish(Float64(data=knee_cmd))
+            # Swing legs: backward → forward
+            for leg in swing_legs:
+                hip_idx = (leg - 1) * 3
+                knee_idx = hip_idx + 1
+                ankle_idx = hip_idx + 2
 
-        # ankles: keep 0 for now
-        for leg in self.legs:
-            self.pubs[('ankle',leg)].publish(Float64(data=0.0))
+                start_hip = backward_mag
+                end_hip = forward_mag
+
+                hip_pos = start_hip + (end_hip - start_hip) * t
+                positions[hip_idx] = hip_pos
+                positions[knee_idx] = knee_up
+                positions[ankle_idx] = 0.0
+
+            # Stance legs: forward → backward
+            for leg in stance_legs:
+                hip_idx = (leg - 1) * 3
+                knee_idx = hip_idx + 1
+                ankle_idx = hip_idx + 2
+
+                start_hip = forward_mag
+                end_hip = backward_mag
+
+                hip_pos = start_hip + (end_hip - start_hip) * t
+                positions[hip_idx] = hip_pos
+                positions[knee_idx] = knee_down
+                positions[ankle_idx] = 0.0
+
+            point = JointTrajectoryPoint()
+            point.positions = positions
+            point.time_from_start.sec = int(t)
+            msg.points.append(point)
+
+        self.publisher_.publish(msg)
+        self.phase = 1 - self.phase
 
 
 def main(args=None):
