@@ -46,7 +46,7 @@ def generate_launch_description():
             '-topic', 'robot_description',
             '-name', 'hexapod',
             '-allow_renaming', 'true',
-            '-x', '0', '-y', '0', '-z', '0.2'
+            '-x', '0', '-y', '0', '-z', '0.1'
         ],
         output='screen'
     )

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.5.1 LTS commit date:2025-07-29, commit time:05:31, hash:b0a72b245dcf</authoring_tool>
+    </contributor>
+    <created>2025-08-14T01:37:37</created>
+    <modified>2025-08-14T01:37:37</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">39.59775</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <dof_distance sid="dof_distance" type="float">10</dof_distance>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Light-light" name="Light">
+      <technique_common>
+        <point>
+          <color sid="color">1000 1000 1000</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">2097153</mode>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <energy sid="blender_energy" type="float">1000</energy>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <clipsta sid="clipsta" type="float">0.04999995</clipsta>
+          <clipend sid="clipend" type="float">40</clipend>
+          <radius sid="radius" type="float">0.1</radius>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_effects>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0 0.00625713 0.07835485 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="Material-material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="slop-mesh" name="slop">
+      <mesh>
+        <source id="slop-mesh-positions">
+          <float_array id="slop-mesh-positions-array" count="207">0.5217391 0.02768599 -0.9210146 0.5217391 0.02768599 0.9789856 -0.4782609 0.02768599 -0.9210146 -0.4782609 0.02768599 0.9789856 -0.4782609 -0.02231395 -0.9710145 -0.4782609 -0.2362841 -0.9710145 0.5217391 -0.02231395 -0.9710145 0.5217391 -0.2362841 -0.9710145 0.5217391 -0.2362841 -1.971014 -0.4782609 -0.2362841 -1.971014 0.5217391 0.1216554 -0.9875839 0.5217391 -0.2362841 -1.971014 -0.4782609 0.1216554 -0.9875839 -0.4782609 -0.2362841 -1.971014 -0.4782609 0.127686 -0.9533815 -0.4782609 0.127686 1.011353 0.5217391 0.127686 -0.9533815 0.5217391 0.127686 1.011353 -0.4782609 0.1216554 1.045554 -0.4782609 -0.2362841 2.028985 0.5217391 0.1216554 1.045554 0.5217391 -0.2362841 2.028985 0.5217391 -0.2362841 1.028985 -0.4782609 -0.2362841 1.028985 -0.4782609 -0.2362841 2.028985 0.5217391 -0.02231395 1.028985 -0.4782609 -0.02231395 1.028985 0.5217391 -0.01363152 1.028225 0.5217391 -0.005212903 -0.9679995 0.5217391 -0.01363152 -0.9702546 0.5217391 0.009825408 -0.9593165 0.5217391 0.002686023 -0.9643155 0.5217391 -0.005212903 1.02597 0.5217391 0.002686023 1.022286 0.5217391 0.009825408 1.017287 0.5217391 0.02467072 -0.9381155 0.5217391 0.02098733 -0.9460145 0.5217391 0.01598829 -0.9531535 0.5217391 0.02692639 -0.9296965 0.5217391 0.1270099 -0.9649915 0.5217391 0.1249905 -0.9764433 0.5217391 0.01598829 1.011125 0.5217391 0.02098733 1.003985 0.5217391 0.1249905 1.034415 0.5217391 0.02467072 0.9960866 0.5217391 0.1270099 1.022963 0.5217391 0.02692639 0.9876676 -0.4782609 -0.01363152 -0.9702546 -0.4782609 -0.005212903 1.02597 -0.4782609 -0.01363152 1.028225 -0.4782609 -0.005212903 -0.9679995 -0.4782609 0.002686023 -0.9643155 -0.4782609 0.1216554 -0.9875839 -0.4782609 0.009825408 -0.9593165 -0.4782609 0.02467072 0.9960866 -0.4782609 0.02098733 1.003985 -0.4782609 0.1216554 1.045554 -0.4782609 0.01598829 1.011125 -0.4782609 0.009825408 1.017287 -0.4782609 0.002686023 1.022286 -0.4782609 0.02692639 0.9876676 -0.4782609 0.1270099 1.022963 -0.4782609 0.1249905 1.034415 -0.4782609 0.01598829 -0.9531535 -0.4782609 0.02098733 -0.9460145 -0.4782609 0.1249905 -0.9764433 -0.4782609 0.02467072 -0.9381155 -0.4782609 0.1270099 -0.9649915 -0.4782609 0.02692639 -0.9296965</float_array>
+          <technique_common>
+            <accessor source="#slop-mesh-positions-array" count="69" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="slop-mesh-normals">
+          <float_array id="slop-mesh-normals-array" count="372">0 -1 0 0 -1 0 0 0 1 0 0 1 0 -1 0 0 -1 0 0 0.9396926 -0.3420202 0 0.9396926 -0.3420202 0 1 0 0 1 0 0 0.9396926 0.34202 0 0.9396926 0.34202 0 -1 0 0 -1 0 0 0 -1 0 0 -1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 -0.9961943 0.08715963 0 -0.9961943 0.08715963 0 -0.9659306 0.2588012 0 -0.9659306 0.2588012 0 -0.9063078 0.4226185 0 -0.9063078 0.4226185 0 -0.8191384 0.5735959 0 -0.8191384 0.5735959 0 -0.7071136 0.7071 0 -0.7071136 0.7071 0 -0.573575 0.8191531 0 -0.573575 0.8191531 0 -0.422671 0.9062833 0 -0.422671 0.9062833 0 -0.2587466 0.9659452 0 -0.2587466 0.9659452 0 -0.08719527 0.9961912 0 -0.08719527 0.9961912 0 -0.08720886 -0.99619 0 -0.08720886 -0.99619 0 -0.2587339 -0.9659487 0 -0.2587339 -0.9659487 0 -0.4226822 -0.9062779 0 -0.4226822 -0.9062779 0 -0.5735657 -0.8191596 0 -0.5735657 -0.8191596 0 -0.7071068 -0.7071068 0 -0.7071068 -0.7071068 0 -0.8191474 -0.5735831 0 -0.8191474 -0.5735831 0 -0.9063028 -0.4226289 0 -0.9063028 -0.4226289 0 -0.9659306 -0.2588012 0 -0.9659306 -0.2588012 0 -0.9961944 -0.08715844 0 -0.9961944 -0.08715844 0 0.9983087 -0.0581358 0 0.9983087 -0.0581358 0 0.9848058 -0.1736596 0 0.9848058 -0.1736596 0 0.9579918 -0.2867958 0 0.9579918 -0.2867958 0 0.9983088 0.05813521 0 0.9983088 0.05813521 0 0.9848061 0.1736578 0 0.9848061 0.1736578 0 0.9579867 0.2868127 0 0.9579867 0.2868127</float_array>
+          <technique_common>
+            <accessor source="#slop-mesh-normals-array" count="124" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="slop-mesh-vertices">
+          <input semantic="POSITION" source="#slop-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="124">
+          <input semantic="VERTEX" source="#slop-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#slop-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 1 1 1 3 1 4 2 5 2 6 2 6 3 5 3 7 3 8 4 7 4 9 4 9 5 7 5 5 5 10 6 11 6 12 6 12 7 11 7 13 7 14 8 15 8 16 8 16 9 15 9 17 9 18 10 19 10 20 10 20 11 19 11 21 11 22 12 21 12 23 12 23 13 21 13 24 13 25 14 22 14 26 14 26 15 22 15 23 15 27 16 21 16 25 16 25 17 21 17 22 17 28 18 29 18 8 18 8 19 29 19 6 19 8 20 6 20 7 20 10 21 30 21 8 21 8 22 30 22 31 22 8 23 31 23 28 23 27 24 32 24 21 24 21 25 32 25 33 25 21 26 33 26 20 26 20 27 33 27 34 27 35 28 36 28 10 28 10 29 36 29 37 29 10 30 37 30 30 30 16 31 38 31 39 31 39 32 38 32 35 32 39 33 35 33 40 33 40 34 35 34 10 34 34 35 41 35 20 35 20 36 41 36 42 36 20 37 42 37 43 37 43 38 42 38 44 38 43 39 44 39 45 39 45 40 44 40 46 40 45 41 46 41 17 41 17 42 46 42 1 42 17 43 1 43 16 43 16 44 1 44 0 44 16 45 0 45 38 45 47 46 9 46 4 46 4 47 9 47 5 47 48 48 49 48 24 48 24 49 49 49 26 49 24 50 26 50 23 50 47 51 50 51 9 51 9 52 50 52 51 52 9 53 51 53 52 53 52 54 51 54 53 54 54 55 55 55 56 55 55 56 57 56 56 56 56 57 57 57 58 57 56 58 58 58 24 58 24 59 58 59 59 59 24 60 59 60 48 60 15 61 60 61 61 61 61 62 60 62 54 62 61 63 54 63 62 63 62 64 54 64 56 64 53 65 63 65 52 65 52 66 63 66 64 66 52 67 64 67 65 67 65 68 64 68 66 68 65 69 66 69 67 69 67 70 66 70 68 70 67 71 68 71 14 71 14 72 68 72 2 72 14 73 2 73 15 73 15 74 2 74 3 74 15 75 3 75 60 75 0 76 2 76 38 76 38 77 2 77 68 77 38 78 68 78 35 78 35 79 68 79 66 79 35 80 66 80 36 80 36 81 66 81 64 81 36 82 64 82 37 82 37 83 64 83 63 83 37 84 63 84 30 84 30 85 63 85 53 85 30 86 53 86 31 86 31 87 53 87 51 87 31 88 51 88 28 88 28 89 51 89 50 89 28 90 50 90 29 90 29 91 50 91 47 91 29 92 47 92 6 92 6 93 47 93 4 93 25 94 26 94 27 94 27 95 26 95 49 95 27 96 49 96 32 96 32 97 49 97 48 97 32 98 48 98 33 98 33 99 48 99 59 99 33 100 59 100 34 100 34 101 59 101 58 101 34 102 58 102 41 102 41 103 58 103 57 103 41 104 57 104 42 104 42 105 57 105 55 105 42 106 55 106 44 106 44 107 55 107 54 107 44 108 54 108 46 108 46 109 54 109 60 109 46 110 60 110 1 110 1 111 60 111 3 111 14 112 16 112 39 112 14 113 39 113 67 113 67 114 39 114 40 114 67 115 40 115 65 115 65 116 40 116 10 116 65 117 10 117 52 117 17 118 15 118 61 118 17 119 61 119 45 119 45 120 61 120 62 120 45 121 62 121 43 121 43 122 62 122 56 122 43 123 56 123 20 123</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="slop" name="slop" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -4.37114e-8 -1 0 0 1 -4.37114e-8 0.24 0 0 0 1</matrix>
+        <instance_geometry url="#slop-mesh" name="slop">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.358891 0.7276763 0.3054208 -0.6141704 -6.925791 0 0.8953956 0.4452714 4.958309 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Light" name="Light" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Light-light"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

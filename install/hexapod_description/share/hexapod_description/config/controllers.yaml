@@ -49,73 +49,73 @@ hexapod_joint_trajectory_controller:
       - position
       - velocity
 
-    state_publish_rate: 100.0
-    action_monitor_rate: 50.0
+    state_publish_rate: 250.0
+    action_monitor_rate: 100.0
 
     allow_partial_joints_goal: true
     open_loop_control: true
 
     constraints:
-      stopped_velocity_tolerance: 0.5
-      goal_time: 0.0
+      stopped_velocity_tolerance: 0.8
+      goal_time: 0.3
 
       # Per-joint constraints
       hip_1_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       knee_1_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       ankle_1_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
 
       hip_2_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       knee_2_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       ankle_2_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
 
       hip_3_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       knee_3_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       ankle_3_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
 
       hip_4_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       knee_4_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       ankle_4_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
 
       hip_5_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       knee_5_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       ankle_5_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
 
       hip_6_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       knee_6_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
       ankle_6_joint:
-        trajectory: 0.5
-        goal: 0.5
+        trajectory: 0.8
+        goal: 0.8
