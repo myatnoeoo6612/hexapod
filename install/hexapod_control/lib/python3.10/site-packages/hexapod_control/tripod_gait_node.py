@@ -32,7 +32,7 @@ class TripodGaitNode(Node):
         self.declare_parameter('knee_up', 0.1)            # swing knee (rad)
         self.declare_parameter('knee_down', -0.2)         # stance knee (rad)
         self.declare_parameter('touchdown_start', 0.5)    # fraction of swing when knee starts lowering
-        self.declare_parameter('yaw_bias', 0.1)           # + biases left hips forward, right backward (or vice-versa depending on indexing)
+        self.declare_parameter('yaw_bias', 0.2)           # + biases left hips forward, right backward (or vice-versa depending on indexing)
 
         # Per-leg hip gains and offsets (index legs 1..6)
         for leg in range(1, 7):

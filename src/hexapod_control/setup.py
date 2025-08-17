@@ -35,6 +35,7 @@ setup(
         'console_scripts': [
             # gait control node
             'tripod_gait_node = hexapod_control.tripod_gait_node:main',
+            'hopf_cpg_tripod_node = hexapod_control.hopf_cpg_tripod_node:main',
         ],
     },
 )

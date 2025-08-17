@@ -1,0 +1,21 @@
+running develop
+running egg_info
+writing hexapod_control.egg-info/PKG-INFO
+writing dependency_links to hexapod_control.egg-info/dependency_links.txt
+writing entry points to hexapod_control.egg-info/entry_points.txt
+writing requirements to hexapod_control.egg-info/requires.txt
+writing top-level names to hexapod_control.egg-info/top_level.txt
+reading manifest file 'hexapod_control.egg-info/SOURCES.txt'
+writing manifest file 'hexapod_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod-control.egg-link (link to .)
+Installing hopf_cpg_tripod_node script to /home/myat/hex_ws/install/hexapod_control/lib/hexapod_control
+Installing tripod_gait_node script to /home/myat/hex_ws/install/hexapod_control/lib/hexapod_control
+
+Installed /home/myat/hex_ws/build/hexapod_control
+running symlink_data
+symbolically linking /home/myat/hex_ws/build/hexapod_control/resource/hexapod_control -> /home/myat/hex_ws/install/hexapod_control/share/ament_index/resource_index/packages
+symbolically linking /home/myat/hex_ws/build/hexapod_control/package.xml -> /home/myat/hex_ws/install/hexapod_control/share/hexapod_control
+symbolically linking /home/myat/hex_ws/build/hexapod_control/launch/spawn_hexapod_gz.launch.py -> /home/myat/hex_ws/install/hexapod_control/share/hexapod_control/launch
+symbolically linking /home/myat/hex_ws/build/hexapod_control/launch/tripod_control.launch.py -> /home/myat/hex_ws/install/hexapod_control/share/hexapod_control/launch
+symbolically linking /home/myat/hex_ws/build/hexapod_control/config/controllers.yaml -> /home/myat/hex_ws/install/hexapod_control/share/hexapod_control/config

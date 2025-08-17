@@ -1,3 +1,4 @@
 [console_scripts]
+hopf_cpg_tripod_node = hexapod_control.hopf_cpg_tripod_node:main
 tripod_gait_node = hexapod_control.tripod_gait_node:main
 

@@ -1,6 +1,8 @@
+/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/hopf_cpg_tripod_node.py
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/tripod_gait_node.py
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/pd_tripod.py
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/__init__.py
+/home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/__pycache__/hopf_cpg_tripod_node.cpython-310.pyc
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/__pycache__/tripod_gait_node.cpython-310.pyc
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/__pycache__/pd_tripod.cpython-310.pyc
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control/__pycache__/__init__.cpython-310.pyc
@@ -16,4 +18,5 @@
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control-0.0.0-py3.10.egg-info/entry_points.txt
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control-0.0.0-py3.10.egg-info/requires.txt
 /home/myat/hex_ws/install/hexapod_control/lib/python3.10/site-packages/hexapod_control-0.0.0-py3.10.egg-info/dependency_links.txt
+/home/myat/hex_ws/install/hexapod_control/lib/hexapod_control/hopf_cpg_tripod_node
 /home/myat/hex_ws/install/hexapod_control/lib/hexapod_control/tripod_gait_node

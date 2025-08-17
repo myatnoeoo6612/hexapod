@@ -10,6 +10,7 @@ setup.py
 ../../build/hexapod_control/hexapod_control.egg-info/zip-safe
 config/controllers.yaml
 hexapod_control/__init__.py
+hexapod_control/hopf_cpg_tripod_node.py
 hexapod_control/pd_tripod.py
 hexapod_control/tripod_gait_node.py
 launch/spawn_hexapod_gz.launch.py
