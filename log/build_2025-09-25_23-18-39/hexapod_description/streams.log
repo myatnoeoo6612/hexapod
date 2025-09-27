@@ -1,0 +1,22 @@
+[0.512s] Invoking command in '/home/cattleya/hexapod/src/hexapod_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/cattleya/hexapod/build/hexapod_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cattleya/hexapod/install/hexapod_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_description build --build-base /home/cattleya/hexapod/build/hexapod_description/build install --record /home/cattleya/hexapod/build/hexapod_description/install.log --single-version-externally-managed install_data
+[0.624s] running egg_info
+[0.632s] writing ../../build/hexapod_description/hexapod_description.egg-info/PKG-INFO
+[0.632s] writing dependency_links to ../../build/hexapod_description/hexapod_description.egg-info/dependency_links.txt
+[0.632s] deleting ../../build/hexapod_description/hexapod_description.egg-info/entry_points.txt
+[0.632s] writing requirements to ../../build/hexapod_description/hexapod_description.egg-info/requires.txt
+[0.632s] writing top-level names to ../../build/hexapod_description/hexapod_description.egg-info/top_level.txt
+[0.647s] reading manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+[0.647s] writing manifest file '../../build/hexapod_description/hexapod_description.egg-info/SOURCES.txt'
+[0.647s] running build
+[0.647s] running build_py
+[0.647s] running install
+[0.650s] running install_lib
+[0.658s] creating /home/cattleya/hexapod/install/hexapod_description/lib/python3.12/site-packages/hexapod_description
+[0.658s] copying /home/cattleya/hexapod/build/hexapod_description/build/lib/hexapod_description/__init__.py -> /home/cattleya/hexapod/install/hexapod_description/lib/python3.12/site-packages/hexapod_description
+[0.658s] byte-compiling /home/cattleya/hexapod/install/hexapod_description/lib/python3.12/site-packages/hexapod_description/__init__.py to __init__.cpython-312.pyc
+[0.658s] running install_data
+[0.658s] running install_egg_info
+[0.667s] Copying ../../build/hexapod_description/hexapod_description.egg-info to /home/cattleya/hexapod/install/hexapod_description/lib/python3.12/site-packages/hexapod_description-0.0.0-py3.12.egg-info
+[0.667s] running install_scripts
+[0.719s] writing list of installed files to '/home/cattleya/hexapod/build/hexapod_description/install.log'
+[0.732s] Invoked command in '/home/cattleya/hexapod/src/hexapod_description' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/cattleya/hexapod/build/hexapod_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/cattleya/hexapod/install/hexapod_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hexapod_description build --build-base /home/cattleya/hexapod/build/hexapod_description/build install --record /home/cattleya/hexapod/build/hexapod_description/install.log --single-version-externally-managed install_data

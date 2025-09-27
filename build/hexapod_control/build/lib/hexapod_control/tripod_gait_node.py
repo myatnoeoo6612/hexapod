@@ -9,122 +9,110 @@ class TripodGaitNode(Node):
     def __init__(self):
         super().__init__('tripod_gait_node')
 
+        # Publisher to your controller topic
         self.publisher_ = self.create_publisher(
             JointTrajectory,
             '/hexapod_joint_trajectory_controller/joint_trajectory',
             10
         )
 
+        # === Joint names (must match controllers.yaml) ===
         self.joint_names = [
-            'hip_1_joint', 'knee_1_joint', 'ankle_1_joint',
-            'hip_2_joint', 'knee_2_joint', 'ankle_2_joint',
-            'hip_3_joint', 'knee_3_joint', 'ankle_3_joint',
-            'hip_4_joint', 'knee_4_joint', 'ankle_4_joint',
-            'hip_5_joint', 'knee_5_joint', 'ankle_5_joint',
-            'hip_6_joint', 'knee_6_joint', 'ankle_6_joint'
+            'hip_1_joint', 'knee_1_joint',
+            'hip_2_joint', 'knee_2_joint',
+            'hip_3_joint', 'knee_3_joint',
+            'hip_4_joint', 'knee_4_joint',
+            'hip_5_joint', 'knee_5_joint',
+            'hip_6_joint', 'knee_6_joint'
         ]
 
-        # === Tunable gait params (can be changed via ROS params) ===
-        self.declare_parameter('phase_time', 1.0)         # seconds per phase (two phases per cycle)
-        self.declare_parameter('steps', 6)                # waypoints per phase
-        self.declare_parameter('hip_forward', -0.3)       # forward hip angle (rad)
-        self.declare_parameter('hip_backward', 0.3)       # backward hip angle (rad)
-        self.declare_parameter('knee_up', 0.1)            # swing knee (rad)
-        self.declare_parameter('knee_down', -0.2)         # stance knee (rad)
-        self.declare_parameter('touchdown_start', 0.5)    # fraction of swing when knee starts lowering
-        self.declare_parameter('yaw_bias', 0.2)           # + biases left hips forward, right backward (or vice-versa depending on indexing)
+        # === Tunable gait parameters ===
+        self.declare_parameter('phase_time', 1.0)   # seconds per phase
+        self.declare_parameter('steps', 6)          # waypoints per phase
+        self.declare_parameter('hip_swing', 0.3)    # rad swing range
+        self.declare_parameter('knee_lift', 0.2)    # rad lift range
 
-        # Per-leg hip gains and offsets (index legs 1..6)
-        for leg in range(1, 7):
-            self.declare_parameter(f'hip_gain_{leg}', 1.0)     # amplitude scale
-            self.declare_parameter(f'hip_offset_{leg}', 0.0)   # constant bias (rad)
+        # === Joint limits from your config ===
+        self.hip_min = -0.523
+        self.hip_max =  0.523
+        self.hip_init = 0.0
+
+        self.knee_down = 0.5
+        self.knee_up = 0.7
+        self.knee_init = 0.5
+
+        # === Forward swing direction per leg (based on your config) ===
+        # +1 = forward swing is positive hip rotation
+        # -1 = forward swing is negative hip rotation
+        # Forward swing direction per leg (based on your latest config)
+        self.forward_dir = {
+            1: +1,  # RF
+            2: -1,  # RM
+            3: +1,  # RR
+            4: -1,  # LF
+            5: -1,  # LM
+            6: -1   # LR
+        }
+
 
         phase_time = float(self.get_parameter('phase_time').value)
-        self.timer = self.create_timer(phase_time * 2.0, self.publish_gait)  # keep callback cadence = full cycle
+        self.timer = self.create_timer(phase_time, self.publish_gait)
         self.phase = 0
 
-        self.get_logger().info("Tripod gait node (smooth + drift correction) started.")
+        self.get_logger().info("Tripod gait node started with per-leg forward direction mapping.")
 
-    # Helpers to read params quickly
-    def p(self, name): return self.get_parameter(name).value
+    def clamp(self, x, lo, hi):
+        """Clamp joint command to limits"""
+        return max(lo, min(x, hi))
 
     def publish_gait(self):
         msg = JointTrajectory()
         msg.joint_names = self.joint_names
 
-        # Read parameters (so you can tweak at runtime)
-        forward_mag   = float(self.p('hip_forward'))
-        backward_mag  = float(self.p('hip_backward'))
-        knee_up       = float(self.p('knee_up'))
-        knee_down     = float(self.p('knee_down'))
-        touchdown_t0  = float(self.p('touchdown_start'))  # e.g., 0.8
-        steps         = int(self.p('steps'))
-        phase_time    = float(self.p('phase_time'))
-        yaw_bias      = float(self.p('yaw_bias'))
+        steps = int(self.get_parameter('steps').value)
+        phase_time = float(self.get_parameter('phase_time').value)
+        hip_swing = float(self.get_parameter('hip_swing').value)
+        knee_lift = float(self.get_parameter('knee_lift').value)
 
-        # Tripod grouping
+        # Tripod groups
         if self.phase == 0:
-            swing_legs = [1, 3, 5]  # Tripod A
-            stance_legs = [2, 4, 6] # Tripod B
+            swing_legs = [1, 3, 5]  # A
+            stance_legs = [2, 4, 6] # B
         else:
-            swing_legs = [2, 4, 6]  # Tripod B
-            stance_legs = [1, 3, 5] # Tripod A
+            swing_legs = [2, 4, 6]  # B
+            stance_legs = [1, 3, 5] # A
 
-        # Build waypoints across this phase
         for i in range(steps):
-            t = i / (steps - 1) if steps > 1 else 1.0  # 0 → 1
-            positions = [0.0] * 18
+            t = i / (steps - 1) if steps > 1 else 1.0  # normalized [0..1]
+            eased_t = 0.5 - 0.5 * math.cos(math.pi * t)  # cosine ease
 
-            # Smooth (cosine) easing
-            eased_t = 0.5 - 0.5 * math.cos(math.pi * t)
+            positions = [0.0] * len(self.joint_names)
 
-            # ---- Swing legs: backward → forward, knee up then gently down ----
+            # Swing legs: hip moves forward, knee lifts
             for leg in swing_legs:
-                hip_idx = (leg - 1) * 3
+                hip_idx = (leg - 1) * 2
                 knee_idx = hip_idx + 1
-                ankle_idx = hip_idx + 2
+                sign = self.forward_dir[leg]
 
-                # Base symmetrical sweep
-                base = backward_mag + (forward_mag - backward_mag) * eased_t
+                hip_pos = self.hip_init + sign * hip_swing * (2 * eased_t - 1)
+                knee_pos = self.knee_down + (self.knee_up - self.knee_down) * math.sin(math.pi * t)
 
-                # Apply per-leg amplitude gain and constant offset
-                gain   = float(self.p(f'hip_gain_{leg}'))
-                offset = float(self.p(f'hip_offset_{leg}'))
+                positions[hip_idx] = self.clamp(hip_pos, self.hip_min, self.hip_max)
+                positions[knee_idx] = self.clamp(knee_pos, self.knee_down, self.knee_up)
 
-                # Apply yaw_bias: bias left vs right sides (here legs 1,3,5 assumed left; 2,4,6 right.
-                # Swap if your model is opposite.)
-                side_bias = yaw_bias if leg in [1, 3, 5] else -yaw_bias
-
-                hip_pos = (base * gain) + offset + side_bias
-                positions[hip_idx] = hip_pos
-
-                # Knee touchdown smoothing
-                if t < touchdown_t0:
-                    knee_pos = knee_up
-                else:
-                    denom = max(1e-6, (1.0 - touchdown_t0))
-                    drop_ratio = (t - touchdown_t0) / denom  # 0→1
-                    knee_pos = knee_up + (knee_down - knee_up) * drop_ratio
-                positions[knee_idx] = knee_pos
-                positions[ankle_idx] = 0.0
-
-            # ---- Stance legs: forward → backward, knee stays down ----
+            # Stance legs: hip moves backward, knee stays low
             for leg in stance_legs:
-                hip_idx = (leg - 1) * 3
+                hip_idx = (leg - 1) * 2
                 knee_idx = hip_idx + 1
-                ankle_idx = hip_idx + 2
+                sign = self.forward_dir[leg]
 
-                base = forward_mag + (backward_mag - forward_mag) * eased_t
-                gain   = float(self.p(f'hip_gain_{leg}'))
-                offset = float(self.p(f'hip_offset_{leg}'))
-                side_bias = yaw_bias if leg in [1, 3, 5] else -yaw_bias
+                hip_pos = self.hip_init - sign * hip_swing * (2 * eased_t - 1)
+                knee_pos = self.knee_down  # grounded
 
-                hip_pos = (base * gain) + offset + side_bias
-                positions[hip_idx] = hip_pos
-                positions[knee_idx] = knee_down
-                positions[ankle_idx] = 0.0
+                positions[hip_idx] = self.clamp(hip_pos, self.hip_min, self.hip_max)
+                positions[knee_idx] = self.knee_down
 
-            # Timing for this waypoint within the phase
+            # Add waypoint
             point = JointTrajectoryPoint()
             point.positions = positions
             tsec = t * phase_time
@@ -133,7 +121,7 @@ class TripodGaitNode(Node):
             msg.points.append(point)
 
         self.publisher_.publish(msg)
-        self.phase = 1 - self.phase
+        self.phase = 1 - self.phase  # switch tripod
 
 
 def main(args=None):

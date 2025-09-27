@@ -15,32 +15,26 @@ hexapod_joint_trajectory_controller:
       # Leg 1
       - hip_1_joint
       - knee_1_joint
-      - ankle_1_joint
 
       # Leg 2
       - hip_2_joint
       - knee_2_joint
-      - ankle_2_joint
 
       # Leg 3
       - hip_3_joint
       - knee_3_joint
-      - ankle_3_joint
 
       # Leg 4
       - hip_4_joint
       - knee_4_joint
-      - ankle_4_joint
 
       # Leg 5
       - hip_5_joint
       - knee_5_joint
-      - ankle_5_joint
 
       # Leg 6
       - hip_6_joint
       - knee_6_joint
-      - ankle_6_joint
 
     command_interfaces:
       - position
@@ -66,17 +60,11 @@ hexapod_joint_trajectory_controller:
       knee_1_joint:
         trajectory: 0.8
         goal: 0.8
-      ankle_1_joint:
-        trajectory: 0.8
-        goal: 0.8
 
       hip_2_joint:
         trajectory: 0.8
         goal: 0.8
       knee_2_joint:
-        trajectory: 0.8
-        goal: 0.8
-      ankle_2_joint:
         trajectory: 0.8
         goal: 0.8
 
@@ -86,17 +74,11 @@ hexapod_joint_trajectory_controller:
       knee_3_joint:
         trajectory: 0.8
         goal: 0.8
-      ankle_3_joint:
-        trajectory: 0.8
-        goal: 0.8
 
       hip_4_joint:
         trajectory: 0.8
         goal: 0.8
       knee_4_joint:
-        trajectory: 0.8
-        goal: 0.8
-      ankle_4_joint:
         trajectory: 0.8
         goal: 0.8
 
@@ -106,16 +88,10 @@ hexapod_joint_trajectory_controller:
       knee_5_joint:
         trajectory: 0.8
         goal: 0.8
-      ankle_5_joint:
-        trajectory: 0.8
-        goal: 0.8
 
       hip_6_joint:
         trajectory: 0.8
         goal: 0.8
       knee_6_joint:
-        trajectory: 0.8
-        goal: 0.8
-      ankle_6_joint:
         trajectory: 0.8
         goal: 0.8

@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="my_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0027827 6.0757E-05 0.0071351"
+        rpy="0 0 0" />
+      <mass
+        value="0.16098" />
+      <inertia
+        ixx="0.00015107"
+        ixy="-2.8194E-11"
+        ixz="6.3867E-11"
+        iyy="5.948E-05"
+        iyz="1.3857E-06"
+        izz="0.00015816" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hip_1_link">
+    <inertial>
+      <origin
+        xyz="0.014011 0.00043956 -0.019212"
+        rpy="0 0 0" />
+      <mass
+        value="0.059796" />
+      <inertia
+        ixx="1.2056E-05"
+        ixy="-8.1863E-10"
+        ixz="4.1746E-07"
+        iyy="1.5747E-05"
+        iyz="3.4409E-07"
+        izz="1.5486E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_1_joint"
+    type="revolute">
+    <origin
+      xyz="0.0777 -0.034784 0.022207"
+      rpy="-0.0098734 -0.0098729 -0.78535" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_1_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="knee_1_link">
+    <inertial>
+      <origin
+        xyz="-5.8002E-05 -8.4414E-05 0.019662"
+        rpy="0 0 0" />
+      <mass
+        value="0.0019497" />
+      <inertia
+        ixx="5.3939E-08"
+        ixy="3.432E-10"
+        ixz="-3.7652E-11"
+        iyy="5.4049E-08"
+        iyz="-4.2542E-11"
+        izz="1.0291E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_1_joint"
+    type="revolute">
+    <origin
+      xyz="0.024 0.0209 -0.0209"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hip_1_link" />
+    <child
+      link="knee_1_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="ankle_1_link">
+    <inertial>
+      <origin
+        xyz="0.055157 -0.014545 -0.0003642"
+        rpy="0 0 0" />
+      <mass
+        value="0.058138" />
+      <inertia
+        ixx="3.3991E-05"
+        ixy="7.5722E-07"
+        ixz="-5.6672E-09"
+        iyy="1.2196E-05"
+        iyz="6.7393E-08"
+        izz="3.7328E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0209"
+      rpy="0 0 0" />
+    <parent
+      link="knee_1_link" />
+    <child
+      link="ankle_1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_2_link">
+    <inertial>
+      <origin
+        xyz="0.014011 0.00043956 -0.019212"
+        rpy="0 0 0" />
+      <mass
+        value="0.059796" />
+      <inertia
+        ixx="1.2056E-05"
+        ixy="-8.1856E-10"
+        ixz="4.1746E-07"
+        iyy="1.5747E-05"
+        iyz="3.4409E-07"
+        izz="1.5486E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_2_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0032327 -0.075288 0.018972"
+      rpy="-0.003614 -0.013487 -1.309" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_2_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="knee_2_link">
+    <inertial>
+      <origin
+        xyz="-5.9449E-05 -8.652E-05 0.019192"
+        rpy="0 0 0" />
+      <mass
+        value="0.0019022" />
+      <inertia
+        ixx="5.3871E-08"
+        ixy="3.432E-10"
+        ixz="-3.7652E-11"
+        iyy="5.3981E-08"
+        iyz="-4.2542E-11"
+        izz="1.0285E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_2_joint"
+    type="revolute">
+    <origin
+      xyz="0.024 0.0209 -0.0209"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hip_2_link" />
+    <child
+      link="knee_2_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ankle_2_link">
+    <inertial>
+      <origin
+        xyz="0.055157 -0.014545 -0.0003642"
+        rpy="0 0 0" />
+      <mass
+        value="0.058138" />
+      <inertia
+        ixx="3.3991E-05"
+        ixy="7.5722E-07"
+        ixz="-5.6657E-09"
+        iyy="1.2196E-05"
+        iyz="6.7393E-08"
+        izz="3.7328E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0209"
+      rpy="0 0 0" />
+    <parent
+      link="knee_2_link" />
+    <child
+      link="ankle_2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_3_link">
+    <inertial>
+      <origin
+        xyz="0.014011 0.00043956 -0.019212"
+        rpy="0 0 0" />
+      <mass
+        value="0.059796" />
+      <inertia
+        ixx="1.2056E-05"
+        ixy="-8.1863E-10"
+        ixz="4.1746E-07"
+        iyy="1.5747E-05"
+        iyz="3.4409E-07"
+        izz="1.5486E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_3_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0737 -0.034784 0.022207"
+      rpy="0.0098734 -0.0098729 -2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_3_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="knee_3_link">
+    <inertial>
+      <origin
+        xyz="-5.9449E-05 -8.652E-05 0.019192"
+        rpy="0 0 0" />
+      <mass
+        value="0.0019022" />
+      <inertia
+        ixx="5.3871E-08"
+        ixy="3.432E-10"
+        ixz="-3.7652E-11"
+        iyy="5.3981E-08"
+        iyz="-4.2542E-11"
+        izz="1.0285E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_3_joint"
+    type="revolute">
+    <origin
+      xyz="0.024 0.0209 -0.0209"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hip_3_link" />
+    <child
+      link="knee_3_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="ankle_3_link">
+    <inertial>
+      <origin
+        xyz="0.055157 -0.014545 -0.0003642"
+        rpy="0 0 0" />
+      <mass
+        value="0.058138" />
+      <inertia
+        ixx="3.3991E-05"
+        ixy="7.5722E-07"
+        ixz="-5.6672E-09"
+        iyy="1.2196E-05"
+        iyz="6.7393E-08"
+        izz="3.7328E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_3_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0209"
+      rpy="0 0 0" />
+    <parent
+      link="knee_3_link" />
+    <child
+      link="ankle_3_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_4_link">
+    <inertial>
+      <origin
+        xyz="0.014011 0.00043956 -0.019212"
+        rpy="0 0 0" />
+      <mass
+        value="0.059796" />
+      <inertia
+        ixx="1.2056E-05"
+        ixy="-8.1863E-10"
+        ixz="4.1746E-07"
+        iyy="1.5747E-05"
+        iyz="3.4409E-07"
+        izz="1.5486E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_4_joint"
+    type="revolute">
+    <origin
+      xyz="0.0777 0.03521 0.021229"
+      rpy="-0.0098734 0.0098729 0.78535" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_4_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="knee_4_link">
+    <inertial>
+      <origin
+        xyz="-5.9449E-05 -8.652E-05 0.019192"
+        rpy="0 0 0" />
+      <mass
+        value="0.0019022" />
+      <inertia
+        ixx="5.3871E-08"
+        ixy="3.432E-10"
+        ixz="-3.7652E-11"
+        iyy="5.3981E-08"
+        iyz="-4.2542E-11"
+        izz="1.0285E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_4_joint"
+    type="revolute">
+    <origin
+      xyz="0.024 0.0209 -0.0209"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hip_4_link" />
+    <child
+      link="knee_4_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="ankle_4_link">
+    <inertial>
+      <origin
+        xyz="0.0551573941355666 -0.0145449150364123 -0.000364197703512814"
+        rpy="0 0 0" />
+      <mass
+        value="0.0581378722016232" />
+      <inertia
+        ixx="3.39906325618032E-05"
+        ixy="7.57218287302681E-07"
+        ixz="-5.66717028033141E-09"
+        iyy="1.21962502787114E-05"
+        iyz="6.73927171074531E-08"
+        izz="3.73281606436596E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_4_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0209"
+      rpy="0 0 0" />
+    <parent
+      link="knee_4_link" />
+    <child
+      link="ankle_4_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_5_link">
+    <inertial>
+      <origin
+        xyz="0.014011 0.00043956 -0.019212"
+        rpy="0 0 0" />
+      <mass
+        value="0.059796" />
+      <inertia
+        ixx="1.2056E-05"
+        ixy="-8.187E-10"
+        ixz="4.1746E-07"
+        iyy="1.5747E-05"
+        iyz="3.4409E-07"
+        izz="1.5486E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_4_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0032327 0.075608 0.016865"
+      rpy="-0.003614 0.013487 1.309" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_5_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="knee_5_link">
+    <inertial>
+      <origin
+        xyz="-5.9449E-05 -8.652E-05 0.019192"
+        rpy="0 0 0" />
+      <mass
+        value="0.0019022" />
+      <inertia
+        ixx="5.3871E-08"
+        ixy="3.432E-10"
+        ixz="-3.7652E-11"
+        iyy="5.3981E-08"
+        iyz="-4.2542E-11"
+        izz="1.0285E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_5_joint"
+    type="fixed">
+    <origin
+      xyz="0.024 0.0209 -0.0209"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hip_5_link" />
+    <child
+      link="knee_5_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ankle_5_link">
+    <inertial>
+      <origin
+        xyz="0.055157 -0.014545 -0.0003642"
+        rpy="0 0 0" />
+      <mass
+        value="0.058138" />
+      <inertia
+        ixx="3.3991E-05"
+        ixy="7.5722E-07"
+        ixz="-5.6686E-09"
+        iyy="1.2196E-05"
+        iyz="6.7393E-08"
+        izz="3.7328E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_5_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.020899999963091"
+      rpy="0 0 0" />
+    <parent
+      link="knee_5_link" />
+    <child
+      link="ankle_5_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hip_6_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/hip_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_6_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0737 0.03521 0.021229"
+      rpy="0.0098734 0.0098729 2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_6_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="knee_6_link">
+    <inertial>
+      <origin
+        xyz="-5.9449E-05 -8.652E-05 0.019192"
+        rpy="0 0 0" />
+      <mass
+        value="0.0019022" />
+      <inertia
+        ixx="5.3871E-08"
+        ixy="3.432E-10"
+        ixz="-3.7652E-11"
+        iyy="5.3981E-08"
+        iyz="-4.2542E-11"
+        izz="1.0285E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/knee_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_6_joint"
+    type="revolute">
+    <origin
+      xyz="0.024 0.0209 -0.0209"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hip_6_link" />
+    <child
+      link="knee_6_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="ankle_6_link">
+    <inertial>
+      <origin
+        xyz="0.055157 -0.014545 -0.0003642"
+        rpy="0 0 0" />
+      <mass
+        value="0.058138" />
+      <inertia
+        ixx="3.3991E-05"
+        ixy="7.5722E-07"
+        ixz="-5.6672E-09"
+        iyy="1.2196E-05"
+        iyz="6.7393E-08"
+        izz="3.7328E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/ankle_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_6_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0208999999630915"
+      rpy="0 0 0" />
+    <parent
+      link="knee_6_link" />
+    <child
+      link="ankle_6_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,38 +1,3 @@
-# controller_manager:
-#   ros__parameters:
-#     update_rate: 1000
-#     joint_state_broadcaster:
-#       type: joint_state_broadcaster/JointStateBroadcaster
-#     effort_controller:
-#       type: effort_controllers/JointGroupEffortController
-
-# effort_controller:
-#   ros__parameters:
-#     joints:
-#       - hip_1_joint
-#       - knee_1_joint
-#       - ankle_1_joint
-#       - hip_2_joint
-#       - knee_2_joint
-#       - ankle_2_joint
-#       - hip_3_joint
-#       - knee_3_joint
-#       - ankle_3_joint
-#       - hip_4_joint
-#       - knee_4_joint
-#       - ankle_4_joint
-#       - hip_5_joint
-#       - knee_5_joint
-#       - ankle_5_joint
-#       - hip_6_joint
-#       - knee_6_joint
-#       - ankle_6_joint
-#     command_interfaces:
-#       - effort
-#     state_interfaces:
-#       - position
-#       - velocity
-# controllers.yaml
 controller_manager:
   ros__parameters:
     update_rate: 200

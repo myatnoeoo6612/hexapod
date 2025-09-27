@@ -46,10 +46,12 @@ def generate_launch_description():
             '-topic', 'robot_description',
             '-name', 'hexapod',
             '-allow_renaming', 'true',
-            '-x', '0', '-y', '0', '-z', '0.1'
+            '-x', '0', '-y', '0', '-z', '0.5',
+            '-R', '0', '-P', '0', '-Y', '-1.5708'
         ],
         output='screen'
     )
+
 
 
     # Spawner nodes
