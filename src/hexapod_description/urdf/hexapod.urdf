@@ -82,6 +82,70 @@
           rgba="0.19804 0.19804 0.19804 1" />
       </material>
     </visual>
+    <gazebo reference="imu_link">
+        <sensor name="br_imu" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <imu>
+              <angular_velocity>
+                <x>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                  </noise>
+                </x>
+                <y>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                  </noise>
+                </y>
+                <z>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                  </noise>
+                </z>
+              </angular_velocity>
+              <linear_acceleration>
+                <x>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                  </noise>
+                </x>
+                <y>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                  </noise>
+                </y>
+                <z>
+                  <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                  </noise>
+                </z>
+              </linear_acceleration>
+            </imu>
+            <plugin name="bytes_imu" filename="libgazebo_ros_imu_sensor.so">
+                <ros>
+                    <namespace>imu</namespace>
+                    <remapping>~/out:=data</remapping>
+                </ros>
+                <initial_orientation_as_reference>false</initial_orientation_as_reference>
+            </plugin>
+        </sensor>
+    </gazebo>
+    
+        <!-- <gazebo>
+          <plugin filename="gz-sim-imu-system"
+                  name="gz::sim::systems::Imu">
+            <topic>imu</topic>
+            <update_rate>250</update_rate>
+          </plugin>
+        </gazebo> -->
+
     <collision>
       <origin
         xyz="0 0 0"
@@ -90,7 +154,7 @@
         <mesh
           filename="package://my_robot/meshes/base_link.STL" />
       </geometry>
-    </collision>
+    </collision> 
   </link>
   <link
     name="hip_1_link">
@@ -1122,12 +1186,13 @@
   
     
   </ros2_control>
-  <gazebo>
+  <gazebo>    
     <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <!-- <robot_namespace>my_robot</robot_namespace> -->
       <parameters>/home/cattleya/hexapod/install/hexapod_description/share/hexapod_description/config/controllers.yaml</parameters>
       <update_rate>250</update_rate>
-    </plugin>
+    </plugin> 
+
   </gazebo>  
   
 </robot>

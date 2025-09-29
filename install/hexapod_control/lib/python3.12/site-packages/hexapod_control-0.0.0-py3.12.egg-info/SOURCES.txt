@@ -11,7 +11,8 @@ setup.py
 config/controllers.yaml
 hexapod_control/__init__.py
 hexapod_control/hopf_cpg_tripod_node.py
-hexapod_control/pd_tripod.py
+hexapod_control/ik_tripod.py
+hexapod_control/imu.py
 hexapod_control/tripod_gait_node.py
 launch/spawn_hexapod_gz.launch.py
 launch/tripod_control.launch.py

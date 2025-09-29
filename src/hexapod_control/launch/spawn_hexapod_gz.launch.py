@@ -27,7 +27,6 @@ def generate_launch_description():
         ]
     )
 
-    # controller_manager with YAML loaded
     controller_manager_node = Node(
         package='controller_manager',
         executable='ros2_control_node',
@@ -39,7 +38,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Spawn robot into Gazebo
     spawn_entity = ExecuteProcess(
         cmd=[
             'ros2', 'run', 'ros_gz_sim', 'create',
@@ -47,12 +45,27 @@ def generate_launch_description():
             '-name', 'hexapod',
             '-allow_renaming', 'true',
             '-x', '0', '-y', '0', '-z', '0.5',
-            '-R', '0', '-P', '0', '-Y', '-1.5708'
+            '-R', '0', '-P', '0', '-Y', '0'
         ],
         output='screen'
     )
 
+    # --- Bridge for dynamic_pose/info ---
+    gz_bridge = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'ros_gz_bridge', 'parameter_bridge',
+            '/world/default/dynamic_pose/info@geometry_msgs/msg/PoseArray@gz.msgs.Pose_V'
+        ],
+        output='screen'
+    )
 
+    # --- IMU node ---
+    imu_node = Node(
+        package='hexapod_control',
+        executable='imu',
+        name='imu',
+        output='screen'
+    )
 
     # Spawner nodes
     controller_names_to_spawn = [
@@ -69,13 +82,13 @@ def generate_launch_description():
         ) for controller in controller_names_to_spawn
     ]
 
-
-
-    # Launch
+    # --- Launch ---
     ld = LaunchDescription()
     ld.add_action(robot_state_publisher_node)
     ld.add_action(controller_manager_node)
     ld.add_action(spawn_entity)
+    ld.add_action(gz_bridge)
+    ld.add_action(imu_node)
     for spawner in spawner_nodes:
         ld.add_action(spawner)
     return ld

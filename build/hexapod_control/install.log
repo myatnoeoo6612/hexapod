@@ -1,9 +1,11 @@
-/home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/pd_tripod.py
+/home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/imu.py
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/hopf_cpg_tripod_node.py
+/home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/ik_tripod.py
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/tripod_gait_node.py
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__init__.py
-/home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__pycache__/pd_tripod.cpython-312.pyc
+/home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__pycache__/imu.cpython-312.pyc
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__pycache__/hopf_cpg_tripod_node.cpython-312.pyc
+/home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__pycache__/ik_tripod.cpython-312.pyc
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__pycache__/tripod_gait_node.cpython-312.pyc
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control/__pycache__/__init__.cpython-312.pyc
 /home/cattleya/hexapod/install/hexapod_control/share/ament_index/resource_index/packages/hexapod_control
@@ -19,4 +21,6 @@
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control-0.0.0-py3.12.egg-info/dependency_links.txt
 /home/cattleya/hexapod/install/hexapod_control/lib/python3.12/site-packages/hexapod_control-0.0.0-py3.12.egg-info/requires.txt
 /home/cattleya/hexapod/install/hexapod_control/lib/hexapod_control/hopf_cpg_tripod_node
+/home/cattleya/hexapod/install/hexapod_control/lib/hexapod_control/ik_tripod
+/home/cattleya/hexapod/install/hexapod_control/lib/hexapod_control/imu
 /home/cattleya/hexapod/install/hexapod_control/lib/hexapod_control/tripod_gait_node

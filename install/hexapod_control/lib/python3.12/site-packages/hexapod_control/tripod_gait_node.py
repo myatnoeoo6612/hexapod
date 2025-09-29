@@ -41,25 +41,22 @@ class TripodGaitNode(Node):
         self.knee_up = 0.7
         self.knee_init = 0.5
 
-        # === Forward swing direction per leg (based on your config) ===
-        # +1 = forward swing is positive hip rotation
-        # -1 = forward swing is negative hip rotation
-        # Forward swing direction per leg (based on your latest config)
+        # === Forward swing direction per leg (corrected) ===
+        # Right legs (1,2,3) = +1, Left legs (4,5,6) = -1
         self.forward_dir = {
-            1: +1,  # RF
+            1: -1,  # RF
             2: -1,  # RM
-            3: +1,  # RR
+            3: -1,  # RR
             4: -1,  # LF
-            5: -1,  # LM
-            6: -1   # LR
+            5: +1,  # LM
+            6: +1   # LR
         }
-
 
         phase_time = float(self.get_parameter('phase_time').value)
         self.timer = self.create_timer(phase_time, self.publish_gait)
         self.phase = 0
 
-        self.get_logger().info("Tripod gait node started with per-leg forward direction mapping.")
+        self.get_logger().info("Tripod gait node started with corrected forward direction mapping.")
 
     def clamp(self, x, lo, hi):
         """Clamp joint command to limits"""
@@ -76,11 +73,11 @@ class TripodGaitNode(Node):
 
         # Tripod groups
         if self.phase == 0:
-            swing_legs = [1, 3, 5]  # A
-            stance_legs = [2, 4, 6] # B
-        else:
             swing_legs = [2, 4, 6]  # B
             stance_legs = [1, 3, 5] # A
+        else:
+            swing_legs = [1, 3, 5]  # A
+            stance_legs = [2, 4, 6] # B
 
         for i in range(steps):
             t = i / (steps - 1) if steps > 1 else 1.0  # normalized [0..1]
